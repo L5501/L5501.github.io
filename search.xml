@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>小林子的生日</title>
+      <link href="/2023/04/24/%E5%B0%8F%E6%9E%97%E5%AD%90/"/>
+      <url>/2023/04/24/%E5%B0%8F%E6%9E%97%E5%AD%90/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="这是一个无效的密码。请进行检查并重试。" data-whm="这些解密的内容可能会改变，但您仍然可以查看。">  <script id="hbeData" type="hbeData" data-hmacdigest="47a21a7a1e96ef0f2fac4a7a25551ebdc9f69b8b1bc0b212ca979f8d1976bd9f">d7f91e15485133d7ea3ffaf04b70b21ad29642500d1c7bba23aefd09cf0452f74338902c0742562adcc35887c3f018a818e82d53a5bf7a56beaef45cfa93ca157206007780e7c62056cc1afdf8bbf96edc9ba4bb42f699d0fe81a946cc1e0748bafc04ad89882a7bf587c792eee785b54bb78e356e3abdf8aa07e3acee3c1b1824f7739dca03f91a86af9bc1863101fd819b15d30b84ea54874c1b02f76b1937b2aa56b256932501098a1f8cfc5eb08a</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">在此处输入密码解密文件</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日志 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>微服务面试题</title>
       <link href="/2023/04/06/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
       <url>/2023/04/06/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
@@ -308,7 +333,7 @@
       <link href="/2022/12/01/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
       <url>/2022/12/01/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</url>
       
-        <content type="html"><![CDATA[<h3 id="2022-12-1更新内容"><a href="#2022-12-1更新内容" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改博客音乐播放器，原网易云，现QQ音乐<br>2.因为收到大量广告评论，现关闭评论功能<br>3.更改网页图标<br>4.更改图片显示方式，增快读取速度。（但是因为使用vercel部署的原因，国内访问还是较慢，但是能接受，以后再想办法）</p><h3 id="2022-12-1更新内容-1"><a href="#2022-12-1更新内容-1" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改标签和分类<br>2.修补部分显示错误</p><h3 id="2023-1-12更新内容"><a href="#2023-1-12更新内容" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.下线音乐播放器</p><h3 id="2023-1-12更新内容-1"><a href="#2023-1-12更新内容-1" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.重新上线音乐播放器<br>2.首页底部增加音乐播放器<br>3.新增挂件<br>4.暂时下线github贡献图<br>5.修改dns，加速访问速度<br>6.白天模式和夜间模式切换时壁纸改变</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="2022-12-1更新内容"><a href="#2022-12-1更新内容" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改博客音乐播放器，原网易云，现QQ音乐<br>2.因为收到大量广告评论，现关闭评论功能<br>3.更改网页图标<br>4.更改图片显示方式，增快读取速度。（但是因为使用vercel部署的原因，国内访问还是较慢，但是能接受，以后再想办法）</p><h3 id="2022-12-1更新内容-1"><a href="#2022-12-1更新内容-1" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改标签和分类<br>2.修补部分显示错误</p><h3 id="2023-1-12更新内容"><a href="#2023-1-12更新内容" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.下线音乐播放器</p><h3 id="2023-1-12更新内容-1"><a href="#2023-1-12更新内容-1" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.重新上线音乐播放器<br>2.首页底部增加音乐播放器<br>3.新增挂件<br>4.暂时下线github贡献图<br>5.修改dns，加速访问速度<br>6.白天模式和夜间模式切换时壁纸改变</p><h3 id="2023-1-12更新内容-2"><a href="#2023-1-12更新内容-2" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>新增加密功能，部分文件需要密码才能看</p>]]></content>
       
       
       <categories>
@@ -382,6 +407,17 @@
     
     
     <entry>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>归档</title>
       <link href="/archives/index.html"/>
       <url>/archives/index.html</url>
@@ -397,18 +433,7 @@
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<!-- GitCalendar容器 --><h2 id="暂时下线"><a href="#暂时下线" class="headerlink" title="暂时下线"></a>暂时下线</h2><!-- ## github贡献图 --><!-- <div id="gitHub"></div> -->]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<!-- GitCalendar容器 --><h2 id="暂时下线"><a href="#暂时下线" class="headerlink" title="暂时下线"></a>暂时下线</h2><!-- ## github贡献图 --><!-- <div id="gitHub"></div> --><p><img src="https://github.com//users/L5501/contributions" alt="Github Contributions"></p>]]></content>
       
     </entry>
     
@@ -470,11 +495,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/js/universe.js"/>
-      <url>/js/universe.js</url>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA[function dark() {window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var n,e,i,h,t=.05,s=document.getElementById("universe"),o=!0,a="180,184,240",r="226,225,142",d="226,225,224",c=[];function f(){n=window.innerWidth,e=window.innerHeight,i=.216*n,s.setAttribute("width",n),s.setAttribute("height",e)}function u(){h.clearRect(0,0,n,e);for(var t=c.length,i=0;i<t;i++){var s=c[i];s.move(),s.fadeIn(),s.fadeOut(),s.draw()}}function y(){this.reset=function(){this.giant=m(3),this.comet=!this.giant&&!o&&m(10),this.x=l(0,n-10),this.y=l(0,e),this.r=l(1.1,2.6),this.dx=l(t,6*t)+(this.comet+1-1)*t*l(50,120)+2*t,this.dy=-l(t,6*t)-(this.comet+1-1)*t*l(50,120),this.fadingOut=null,this.fadingIn=!0,this.opacity=0,this.opacityTresh=l(.2,1-.4*(this.comet+1-1)),this.do=l(5e-4,.002)+.001*(this.comet+1-1)},this.fadeIn=function(){this.fadingIn&&(this.fadingIn=!(this.opacity>this.opacityTresh),this.opacity+=this.do)},this.fadeOut=function(){this.fadingOut&&(this.fadingOut=!(this.opacity<0),this.opacity-=this.do/2,(this.x>n||this.y<0)&&(this.fadingOut=!1,this.reset()))},this.draw=function(){if(h.beginPath(),this.giant)h.fillStyle="rgba("+a+","+this.opacity+")",h.arc(this.x,this.y,2,0,2*Math.PI,!1);else if(this.comet){h.fillStyle="rgba("+d+","+this.opacity+")",h.arc(this.x,this.y,1.5,0,2*Math.PI,!1);for(var t=0;t<30;t++)h.fillStyle="rgba("+d+","+(this.opacity-this.opacity/20*t)+")",h.rect(this.x-this.dx/4*t,this.y-this.dy/4*t-2,2,2),h.fill()}else h.fillStyle="rgba("+r+","+this.opacity+")",h.rect(this.x,this.y,this.r,this.r);h.closePath(),h.fill()},this.move=function(){this.x+=this.dx,this.y+=this.dy,!1===this.fadingOut&&this.reset(),(this.x>n-n/4||this.y<0)&&(this.fadingOut=!0)},setTimeout(function(){o=!1},50)}function m(t){return Math.floor(1e3*Math.random())+1<10*t}function l(t,i){return Math.random()*(i-t)+t}f(),window.addEventListener("resize",f,!1),function(){h=s.getContext("2d");for(var t=0;t<i;t++)c[t]=new y,c[t].reset();u()}(),function t(){document.getElementsByTagName('html')[0].getAttribute('data-theme')=='dark'&&u(),window.requestAnimationFrame(t)}()};dark()]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -493,6 +518,17 @@
     
     <entry>
       <title></title>
+      <link href="/js/universe.js"/>
+      <url>/js/universe.js</url>
+      
+        <content type="html"><![CDATA[function dark() {window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var n,e,i,h,t=.05,s=document.getElementById("universe"),o=!0,a="180,184,240",r="226,225,142",d="226,225,224",c=[];function f(){n=window.innerWidth,e=window.innerHeight,i=.216*n,s.setAttribute("width",n),s.setAttribute("height",e)}function u(){h.clearRect(0,0,n,e);for(var t=c.length,i=0;i<t;i++){var s=c[i];s.move(),s.fadeIn(),s.fadeOut(),s.draw()}}function y(){this.reset=function(){this.giant=m(3),this.comet=!this.giant&&!o&&m(10),this.x=l(0,n-10),this.y=l(0,e),this.r=l(1.1,2.6),this.dx=l(t,6*t)+(this.comet+1-1)*t*l(50,120)+2*t,this.dy=-l(t,6*t)-(this.comet+1-1)*t*l(50,120),this.fadingOut=null,this.fadingIn=!0,this.opacity=0,this.opacityTresh=l(.2,1-.4*(this.comet+1-1)),this.do=l(5e-4,.002)+.001*(this.comet+1-1)},this.fadeIn=function(){this.fadingIn&&(this.fadingIn=!(this.opacity>this.opacityTresh),this.opacity+=this.do)},this.fadeOut=function(){this.fadingOut&&(this.fadingOut=!(this.opacity<0),this.opacity-=this.do/2,(this.x>n||this.y<0)&&(this.fadingOut=!1,this.reset()))},this.draw=function(){if(h.beginPath(),this.giant)h.fillStyle="rgba("+a+","+this.opacity+")",h.arc(this.x,this.y,2,0,2*Math.PI,!1);else if(this.comet){h.fillStyle="rgba("+d+","+this.opacity+")",h.arc(this.x,this.y,1.5,0,2*Math.PI,!1);for(var t=0;t<30;t++)h.fillStyle="rgba("+d+","+(this.opacity-this.opacity/20*t)+")",h.rect(this.x-this.dx/4*t,this.y-this.dy/4*t-2,2,2),h.fill()}else h.fillStyle="rgba("+r+","+this.opacity+")",h.rect(this.x,this.y,this.r,this.r);h.closePath(),h.fill()},this.move=function(){this.x+=this.dx,this.y+=this.dy,!1===this.fadingOut&&this.reset(),(this.x>n-n/4||this.y<0)&&(this.fadingOut=!0)},setTimeout(function(){o=!1},50)}function m(t){return Math.floor(1e3*Math.random())+1<10*t}function l(t,i){return Math.random()*(i-t)+t}f(),window.addEventListener("resize",f,!1),function(){h=s.getContext("2d");for(var t=0;t<i;t++)c[t]=new y,c[t].reset();u()}(),function t(){document.getElementsByTagName('html')[0].getAttribute('data-theme')=='dark'&&u(),window.requestAnimationFrame(t)}()};dark()]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
       <link href="/js/tittle.js"/>
       <url>/js/tittle.js</url>
       
@@ -503,22 +539,11 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
-        <content type="html"><![CDATA[<!-- ## 暂时下线    <div id="aplayer-rlrdOiuh" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7422861869" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="400px" data-preload="none" data-theme="#ad7a86"    ></div> --><!-- ## QQ音乐歌单 --><div id="aplayer-oSEOhviA" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="8708383891" data-server="tencent" data-type="playlist" data-mode="random" data-autoplay="false" data-listmaxheight="340px" data-preload="auto" data-theme="#e3f2f5" data-volume="0.4" mutex="true"></div>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>友链</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="天太冷了，冻死了，天气暖和再做这块"><a href="#天太冷了，冻死了，天气暖和再做这块" class="headerlink" title="天太冷了，冻死了，天气暖和再做这块"></a>天太冷了，冻死了，天气暖和再做这块</h2>]]></content>
       
     </entry>
     
@@ -536,11 +561,11 @@
     
     
     <entry>
-      <title>电影</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
-        <content type="html"><![CDATA[<h2 id="天太冷了，冻死了，天气暖和再做这块"><a href="#天太冷了，冻死了，天气暖和再做这块" class="headerlink" title="天太冷了，冻死了，天气暖和再做这块"></a>天太冷了，冻死了，天气暖和再做这块</h2>]]></content>
+        <content type="html"><![CDATA[<!-- ## 暂时下线    <div id="aplayer-esOVgcJi" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7422861869" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="400px" data-preload="none" data-theme="#ad7a86"    ></div> --><!-- ## QQ音乐歌单 --><div id="aplayer-oSEOhviA" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="8708383891" data-server="tencent" data-type="playlist" data-mode="random" data-autoplay="false" data-listmaxheight="340px" data-preload="auto" data-theme="#e3f2f5" data-volume="0.4" mutex="true"></div>]]></content>
       
     </entry>
     
