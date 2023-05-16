@@ -358,7 +358,7 @@
       <link href="/2022/12/01/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
       <url>/2022/12/01/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</url>
       
-        <content type="html"><![CDATA[<h3 id="2022-12-1更新内容"><a href="#2022-12-1更新内容" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改博客音乐播放器，原网易云，现QQ音乐<br>2.因为收到大量广告评论，现关闭评论功能<br>3.更改网页图标<br>4.更改图片显示方式，增快读取速度。（但是因为使用vercel部署的原因，国内访问还是较慢，但是能接受，以后再想办法）</p><h3 id="2022-12-1更新内容-1"><a href="#2022-12-1更新内容-1" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改标签和分类<br>2.修补部分显示错误</p><h3 id="2023-1-12更新内容"><a href="#2023-1-12更新内容" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.下线音乐播放器</p><h3 id="2023-1-12更新内容-1"><a href="#2023-1-12更新内容-1" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.重新上线音乐播放器<br>2.首页底部增加音乐播放器<br>3.新增挂件<br>4.暂时下线github贡献图<br>5.修改dns，加速访问速度<br>6.白天模式和夜间模式切换时壁纸改变</p><h3 id="2023-4-24更新内容"><a href="#2023-4-24更新内容" class="headerlink" title="2023-4-24更新内容"></a>2023-4-24更新内容</h3><p>1.部分网页增加访问密码</p><h3 id="2023-4-25更新内容"><a href="#2023-4-25更新内容" class="headerlink" title="2023-4-25更新内容"></a>2023-4-25更新内容</h3><p>1.新增评论功能</p><h3 id="2023-5-16更新内容"><a href="#2023-5-16更新内容" class="headerlink" title="2023-5-16更新内容"></a>2023-5-16更新内容</h3><p>1.新增两个分类，目前分类比较复杂，后期还会做调整<br>2.新增gitee联系方式,取消邮件的方式</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="2022-12-1更新内容"><a href="#2022-12-1更新内容" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改博客音乐播放器，原网易云，现QQ音乐<br>2.因为收到大量广告评论，现关闭评论功能<br>3.更改网页图标<br>4.更改图片显示方式，增快读取速度。（但是因为使用vercel部署的原因，国内访问还是较慢，但是能接受，以后再想办法）</p><h3 id="2022-12-1更新内容-1"><a href="#2022-12-1更新内容-1" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改标签和分类<br>2.修补部分显示错误</p><h3 id="2023-1-12更新内容"><a href="#2023-1-12更新内容" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.下线音乐播放器</p><h3 id="2023-1-12更新内容-1"><a href="#2023-1-12更新内容-1" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.重新上线音乐播放器<br>2.首页底部增加音乐播放器<br>3.新增挂件<br>4.暂时下线github贡献图<br>5.修改dns，加速访问速度<br>6.白天模式和夜间模式切换时壁纸改变</p><h3 id="2023-4-24更新内容"><a href="#2023-4-24更新内容" class="headerlink" title="2023-4-24更新内容"></a>2023-4-24更新内容</h3><p>1.部分网页增加访问密码</p><h3 id="2023-4-25更新内容"><a href="#2023-4-25更新内容" class="headerlink" title="2023-4-25更新内容"></a>2023-4-25更新内容</h3><p>1.新增评论功能</p><h3 id="2023-5-16更新内容"><a href="#2023-5-16更新内容" class="headerlink" title="2023-5-16更新内容"></a>2023-5-16更新内容</h3><p>1.新增两个分类，目前分类比较复杂，后期还会做调整<br>2.新增gitee联系方式</p>]]></content>
       
       
       <categories>
@@ -432,22 +432,22 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>归档</title>
+      <link href="/archives/index.html"/>
+      <url>/archives/index.html</url>
       
-        <content type="html"><![CDATA[<!-- GitCalendar容器 --><h2 id="暂时下线"><a href="#暂时下线" class="headerlink" title="暂时下线"></a>暂时下线</h2><!-- ## github贡献图 --><!-- <div id="gitHub"></div> -->]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>归档</title>
-      <link href="/archives/index.html"/>
-      <url>/archives/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<!-- GitCalendar容器 --><h2 id="暂时下线"><a href="#暂时下线" class="headerlink" title="暂时下线"></a>暂时下线</h2><!-- ## github贡献图 --><!-- <div id="gitHub"></div> -->]]></content>
       
     </entry>
     
@@ -488,32 +488,21 @@
     
     <entry>
       <title></title>
-      <link href="/js/light.js"/>
-      <url>/js/light.js</url>
-      
-        <content type="html"><![CDATA[// 霓虹灯效果// 颜色数组var arr = ["#39c5bb", "#f14747", "#f1a247", "#f1ee47", "#b347f1", "#1edbff", "#ed709b", "#5636ed"];// 颜色索引var idx = 0;// 切换颜色function changeColor() {    // 仅夜间模式才启用    if (document.getElementsByTagName('html')[0].getAttribute('data-theme') == 'dark') {        if (document.getElementById("site-name"))            document.getElementById("site-name").style.textShadow = arr[idx] + " 0 0 15px";        if (document.getElementById("site-title"))            document.getElementById("site-title").style.textShadow = arr[idx] + " 0 0 15px";        if (document.getElementById("site-subtitle"))            document.getElementById("site-subtitle").style.textShadow = arr[idx] + " 0 0 10px";        if (document.getElementById("post-info"))            document.getElementById("post-info").style.textShadow = arr[idx] + " 0 0 5px";        try {            document.getElementsByClassName("author-info__name")[0].style.textShadow = arr[idx] + " 0 0 12px";            document.getElementsByClassName("author-info__description")[0].style.textShadow = arr[idx] + " 0 0 12px";        } catch {                    }        idx++;        if (idx == 8) {            idx = 0;        }    } else {        // 白天模式恢复默认        if (document.getElementById("site-name"))            document.getElementById("site-name").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("site-title"))            document.getElementById("site-title").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("site-subtitle"))            document.getElementById("site-subtitle").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("post-info"))            document.getElementById("post-info").style.textShadow = "#1e1e1ee0 1px 1px 1px";        try {            document.getElementsByClassName("author-info__name")[0].style.textShadow = "";            document.getElementsByClassName("author-info__description")[0].style.textShadow = "";        } catch {                    }    }}// 开启计时器window.onload = setInterval(changeColor, 1200);]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/js/tittle.js"/>
-      <url>/js/tittle.js</url>
-      
-        <content type="html"><![CDATA[//动态标题var OriginTitile = document.title;var titleTime;document.addEventListener('visibilitychange', function () {  if (document.hidden) {    //离开当前页面时标签显示内容    document.title = '👀跑哪里去了~';    clearTimeout(titleTime);  } else {    //返回当前页面时标签显示内容    document.title = '🐖抓到你啦～';    //两秒后变回正常标题    titleTime = setTimeout(function () {      document.title = OriginTitile;    }, 2000);  }});]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
       <link href="/js/day.js"/>
       <url>/js/day.js</url>
       
         <content type="html"><![CDATA[var d = new Date();m = d.getMonth() + 1;dd = d.getDate();y = d.getFullYear();// 公祭日if (m == 9 && dd == 18) {    document.getElementsByTagName("html")[0].setAttribute("style", "filter: grayscale(60%);");    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("今天是九一八事变" + (y - 1931).toString() + "周年纪念日\n🪔勿忘国耻，振兴中华🪔");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 7 && dd == 7) {    document.getElementsByTagName("html")[0].setAttribute("style", "filter: grayscale(60%);");    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("今天是卢沟桥事变" + (y - 1937).toString() + "周年纪念日\n🪔勿忘国耻，振兴中华🪔");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 12 && dd == 13) {    document.getElementsByTagName("html")[0].setAttribute("style", "filter: grayscale(60%);");    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("今天是南京大屠杀" + (y - 1937).toString() + "周年纪念日\n🪔勿忘国耻，振兴中华🪔");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 8 && dd == 14) {    document.getElementsByTagName("html")[0].setAttribute("style", "filter: grayscale(60%);");    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("今天是世界慰安妇纪念日\n🪔勿忘国耻，振兴中华🪔");        sessionStorage.setItem("isPopupWindow", "1");    }}// 节假日if (m == 10 && dd <= 3) {//国庆节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("祝祖国" + (y - 1949).toString() + "岁生日快乐！");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 8 && dd == 15) {//搞来玩的，小日子投降    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("小日子已经投降" + (y - 1945).toString() + "年了😃");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 1 && dd == 1) {//元旦节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire(y.toString() + "年元旦快乐！🎉");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 3 && dd == 8) {//妇女节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("各位女神们，妇女节快乐！👩");        sessionStorage.setItem("isPopupWindow", "1");    }}l = ["非常抱歉，因为不可控原因，博客将于明天停止运营！", "好消息，日本没了！", "美国垮了，原因竟然是川普！", "微软垮了！", "你的电脑已经过载，建议立即关机！", "你知道吗？站长很喜欢你哦！", "一分钟有61秒哦", "你喜欢的人跟别人跑了！"]if (m == 4 && dd == 1) {//愚人节，随机谎话    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire(l[Math.floor(Math.random() * l.length)]);        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 5 && dd == 1) {//劳动节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("劳动节快乐\n为各行各业辛勤工作的人们致敬！");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 5 && dd == 4) {//青年节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("青年节快乐\n青春不是回忆逝去,而是把握现在！");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 5 && dd == 20) {//520    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("今年是520情人节\n快和你喜欢的人一起过吧！💑");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 7 && dd == 1) {//建党节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("祝中国共产党" + (y - 1921).toString() + "岁生日快乐！");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 9 && dd == 10) {//教师节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("各位老师们教师节快乐！👩‍🏫");        sessionStorage.setItem("isPopupWindow", "1");    }}if (m == 12 && dd == 25) {//圣诞节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("圣诞节快乐！🎄");        sessionStorage.setItem("isPopupWindow", "1");    }}//传统节日部分if ((y == 2023 && m == 4 && dd == 5) || (y == 2024 && m == 4 && dd == 4) || (y == 2025 && m == 4 && dd == 4)) {//清明节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("清明时节雨纷纷,一束鲜花祭故人💐");        sessionStorage.setItem("isPopupWindow", "1");    }}if ((y == 2023 && m == 12 && dd == 22) || (y == 2024 && m == 12 && dd == 21) || (y == 2025 && m == 12 && dd == 21)) {//冬至    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("冬至快乐\n快吃上一碗热热的汤圆和饺子吧🧆");        sessionStorage.setItem("isPopupWindow", "1");    }}var lunar = calendarFormatter.solar2lunar();//农历采用汉字计算，防止出现闰月导致问题if ((lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初六") || (lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初五") || (lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初四") || (lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初三") || (lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初二") || (lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "初一") || (lunar["IMonthCn"] == "腊月" && lunar["IDayCn"] == "三十") || (lunar["IMonthCn"] == "腊月" && lunar["IDayCn"] == "廿九")) {    //春节，本来只有大年三十到初六，但是有时候除夕是大年二十九，所以也加上了    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire(y.toString() + "年新年快乐\n🎊祝你心想事成，诸事顺利🎊");        sessionStorage.setItem("isPopupWindow", "1");    }}if ((lunar["IMonthCn"] == "正月" && lunar["IDayCn"] == "十五")) {    //元宵节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("元宵节快乐\n送你一个大大的灯笼🧅");        sessionStorage.setItem("isPopupWindow", "1");    }}if ((lunar["IMonthCn"] == "五月" && lunar["IDayCn"] == "初五")) {    //端午节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("端午节快乐\n请你吃一条粽子🍙");        sessionStorage.setItem("isPopupWindow", "1");    }}if ((lunar["IMonthCn"] == "七月" && lunar["IDayCn"] == "初七")) {    //七夕节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("七夕节快乐\n黄昏后,柳梢头,牛郎织女来碰头");        sessionStorage.setItem("isPopupWindow", "1");    }}if ((lunar["IMonthCn"] == "八月" && lunar["IDayCn"] == "十五")) {    //中秋节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("中秋节快乐\n请你吃一块月饼🍪");        sessionStorage.setItem("isPopupWindow", "1");    }}if ((lunar["IMonthCn"] == "九月" && lunar["IDayCn"] == "初九")) {    //重阳节    if (sessionStorage.getItem("isPopupWindow") != "1") {        Swal.fire("重阳节快乐\n独在异乡为异客，每逢佳节倍思亲");        sessionStorage.setItem("isPopupWindow", "1");    }}// 切换主题提醒// if (y == 2022 && m == 12 && (dd >= 18 && dd <= 20)) {//     if (sessionStorage.getItem("isPopupWindow") != "1") {//         Swal.fire("网站换成冬日限定主题啦⛄");//         sessionStorage.setItem("isPopupWindow", "1");//     }// }]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/light.js"/>
+      <url>/js/light.js</url>
+      
+        <content type="html"><![CDATA[// 霓虹灯效果// 颜色数组var arr = ["#39c5bb", "#f14747", "#f1a247", "#f1ee47", "#b347f1", "#1edbff", "#ed709b", "#5636ed"];// 颜色索引var idx = 0;// 切换颜色function changeColor() {    // 仅夜间模式才启用    if (document.getElementsByTagName('html')[0].getAttribute('data-theme') == 'dark') {        if (document.getElementById("site-name"))            document.getElementById("site-name").style.textShadow = arr[idx] + " 0 0 15px";        if (document.getElementById("site-title"))            document.getElementById("site-title").style.textShadow = arr[idx] + " 0 0 15px";        if (document.getElementById("site-subtitle"))            document.getElementById("site-subtitle").style.textShadow = arr[idx] + " 0 0 10px";        if (document.getElementById("post-info"))            document.getElementById("post-info").style.textShadow = arr[idx] + " 0 0 5px";        try {            document.getElementsByClassName("author-info__name")[0].style.textShadow = arr[idx] + " 0 0 12px";            document.getElementsByClassName("author-info__description")[0].style.textShadow = arr[idx] + " 0 0 12px";        } catch {                    }        idx++;        if (idx == 8) {            idx = 0;        }    } else {        // 白天模式恢复默认        if (document.getElementById("site-name"))            document.getElementById("site-name").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("site-title"))            document.getElementById("site-title").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("site-subtitle"))            document.getElementById("site-subtitle").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("post-info"))            document.getElementById("post-info").style.textShadow = "#1e1e1ee0 1px 1px 1px";        try {            document.getElementsByClassName("author-info__name")[0].style.textShadow = "";            document.getElementsByClassName("author-info__description")[0].style.textShadow = "";        } catch {                    }    }}// 开启计时器window.onload = setInterval(changeColor, 1200);]]></content>
       
     </entry>
     
@@ -532,10 +521,10 @@
     
     <entry>
       <title></title>
-      <link href="/js/universe.js"/>
-      <url>/js/universe.js</url>
+      <link href="/js/tittle.js"/>
+      <url>/js/tittle.js</url>
       
-        <content type="html"><![CDATA[function dark() {window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var n,e,i,h,t=.05,s=document.getElementById("universe"),o=!0,a="180,184,240",r="226,225,142",d="226,225,224",c=[];function f(){n=window.innerWidth,e=window.innerHeight,i=.216*n,s.setAttribute("width",n),s.setAttribute("height",e)}function u(){h.clearRect(0,0,n,e);for(var t=c.length,i=0;i<t;i++){var s=c[i];s.move(),s.fadeIn(),s.fadeOut(),s.draw()}}function y(){this.reset=function(){this.giant=m(3),this.comet=!this.giant&&!o&&m(10),this.x=l(0,n-10),this.y=l(0,e),this.r=l(1.1,2.6),this.dx=l(t,6*t)+(this.comet+1-1)*t*l(50,120)+2*t,this.dy=-l(t,6*t)-(this.comet+1-1)*t*l(50,120),this.fadingOut=null,this.fadingIn=!0,this.opacity=0,this.opacityTresh=l(.2,1-.4*(this.comet+1-1)),this.do=l(5e-4,.002)+.001*(this.comet+1-1)},this.fadeIn=function(){this.fadingIn&&(this.fadingIn=!(this.opacity>this.opacityTresh),this.opacity+=this.do)},this.fadeOut=function(){this.fadingOut&&(this.fadingOut=!(this.opacity<0),this.opacity-=this.do/2,(this.x>n||this.y<0)&&(this.fadingOut=!1,this.reset()))},this.draw=function(){if(h.beginPath(),this.giant)h.fillStyle="rgba("+a+","+this.opacity+")",h.arc(this.x,this.y,2,0,2*Math.PI,!1);else if(this.comet){h.fillStyle="rgba("+d+","+this.opacity+")",h.arc(this.x,this.y,1.5,0,2*Math.PI,!1);for(var t=0;t<30;t++)h.fillStyle="rgba("+d+","+(this.opacity-this.opacity/20*t)+")",h.rect(this.x-this.dx/4*t,this.y-this.dy/4*t-2,2,2),h.fill()}else h.fillStyle="rgba("+r+","+this.opacity+")",h.rect(this.x,this.y,this.r,this.r);h.closePath(),h.fill()},this.move=function(){this.x+=this.dx,this.y+=this.dy,!1===this.fadingOut&&this.reset(),(this.x>n-n/4||this.y<0)&&(this.fadingOut=!0)},setTimeout(function(){o=!1},50)}function m(t){return Math.floor(1e3*Math.random())+1<10*t}function l(t,i){return Math.random()*(i-t)+t}f(),window.addEventListener("resize",f,!1),function(){h=s.getContext("2d");for(var t=0;t<i;t++)c[t]=new y,c[t].reset();u()}(),function t(){document.getElementsByTagName('html')[0].getAttribute('data-theme')=='dark'&&u(),window.requestAnimationFrame(t)}()};dark()]]></content>
+        <content type="html"><![CDATA[//动态标题var OriginTitile = document.title;var titleTime;document.addEventListener('visibilitychange', function () {  if (document.hidden) {    //离开当前页面时标签显示内容    document.title = '👀跑哪里去了~';    clearTimeout(titleTime);  } else {    //返回当前页面时标签显示内容    document.title = '🐖抓到你啦～';    //两秒后变回正常标题    titleTime = setTimeout(function () {      document.title = OriginTitile;    }, 2000);  }});]]></content>
       
     </entry>
     
@@ -564,11 +553,11 @@
     
     
     <entry>
-      <title>电影</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title></title>
+      <link href="/js/universe.js"/>
+      <url>/js/universe.js</url>
       
-        <content type="html"><![CDATA[<h2 id="天太冷了，冻死了，天气暖和再做这块"><a href="#天太冷了，冻死了，天气暖和再做这块" class="headerlink" title="天太冷了，冻死了，天气暖和再做这块"></a>天太冷了，冻死了，天气暖和再做这块</h2>]]></content>
+        <content type="html"><![CDATA[function dark() {window.requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var n,e,i,h,t=.05,s=document.getElementById("universe"),o=!0,a="180,184,240",r="226,225,142",d="226,225,224",c=[];function f(){n=window.innerWidth,e=window.innerHeight,i=.216*n,s.setAttribute("width",n),s.setAttribute("height",e)}function u(){h.clearRect(0,0,n,e);for(var t=c.length,i=0;i<t;i++){var s=c[i];s.move(),s.fadeIn(),s.fadeOut(),s.draw()}}function y(){this.reset=function(){this.giant=m(3),this.comet=!this.giant&&!o&&m(10),this.x=l(0,n-10),this.y=l(0,e),this.r=l(1.1,2.6),this.dx=l(t,6*t)+(this.comet+1-1)*t*l(50,120)+2*t,this.dy=-l(t,6*t)-(this.comet+1-1)*t*l(50,120),this.fadingOut=null,this.fadingIn=!0,this.opacity=0,this.opacityTresh=l(.2,1-.4*(this.comet+1-1)),this.do=l(5e-4,.002)+.001*(this.comet+1-1)},this.fadeIn=function(){this.fadingIn&&(this.fadingIn=!(this.opacity>this.opacityTresh),this.opacity+=this.do)},this.fadeOut=function(){this.fadingOut&&(this.fadingOut=!(this.opacity<0),this.opacity-=this.do/2,(this.x>n||this.y<0)&&(this.fadingOut=!1,this.reset()))},this.draw=function(){if(h.beginPath(),this.giant)h.fillStyle="rgba("+a+","+this.opacity+")",h.arc(this.x,this.y,2,0,2*Math.PI,!1);else if(this.comet){h.fillStyle="rgba("+d+","+this.opacity+")",h.arc(this.x,this.y,1.5,0,2*Math.PI,!1);for(var t=0;t<30;t++)h.fillStyle="rgba("+d+","+(this.opacity-this.opacity/20*t)+")",h.rect(this.x-this.dx/4*t,this.y-this.dy/4*t-2,2,2),h.fill()}else h.fillStyle="rgba("+r+","+this.opacity+")",h.rect(this.x,this.y,this.r,this.r);h.closePath(),h.fill()},this.move=function(){this.x+=this.dx,this.y+=this.dy,!1===this.fadingOut&&this.reset(),(this.x>n-n/4||this.y<0)&&(this.fadingOut=!0)},setTimeout(function(){o=!1},50)}function m(t){return Math.floor(1e3*Math.random())+1<10*t}function l(t,i){return Math.random()*(i-t)+t}f(),window.addEventListener("resize",f,!1),function(){h=s.getContext("2d");for(var t=0;t<i;t++)c[t]=new y,c[t].reset();u()}(),function t(){document.getElementsByTagName('html')[0].getAttribute('data-theme')=='dark'&&u(),window.requestAnimationFrame(t)}()};dark()]]></content>
       
     </entry>
     
@@ -579,7 +568,18 @@
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
       
-        <content type="html"><![CDATA[<!-- ## 暂时下线    <div id="aplayer-PkiXRiao" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7422861869" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="400px" data-preload="none" data-theme="#ad7a86"    ></div> --><!-- ## QQ音乐歌单 --><div id="aplayer-oSEOhviA" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="8708383891" data-server="tencent" data-type="playlist" data-mode="random" data-autoplay="false" data-listmaxheight="340px" data-preload="auto" data-theme="#e3f2f5" data-volume="0.4" mutex="true"></div>]]></content>
+        <content type="html"><![CDATA[<!-- ## 暂时下线    <div id="aplayer-UxMjRVCI" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7422861869" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="400px" data-preload="none" data-theme="#ad7a86"    ></div> --><!-- ## QQ音乐歌单 --><div id="aplayer-oSEOhviA" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="8708383891" data-server="tencent" data-type="playlist" data-mode="random" data-autoplay="false" data-listmaxheight="340px" data-preload="auto" data-theme="#e3f2f5" data-volume="0.4" mutex="true"></div>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="天太冷了，冻死了，天气暖和再做这块"><a href="#天太冷了，冻死了，天气暖和再做这块" class="headerlink" title="天太冷了，冻死了，天气暖和再做这块"></a>天太冷了，冻死了，天气暖和再做这块</h2>]]></content>
       
     </entry>
     
