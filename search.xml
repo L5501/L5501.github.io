@@ -79,6 +79,31 @@
     
     
     <entry>
+      <title>测试文章</title>
+      <link href="/posts/7a6a6b5a.html"/>
+      <url>/posts/7a6a6b5a.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="这是一个测试文章">这是一个测试文章</h2><p>以下为文章格式测试</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> java笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>numpy数据分析</title>
       <link href="/posts/9d3872d5.html"/>
       <url>/posts/9d3872d5.html</url>
@@ -154,31 +179,6 @@
     
     
     <entry>
-      <title>windows激活</title>
-      <link href="/posts/91cf1372.html"/>
-      <url>/posts/91cf1372.html</url>
-      
-        <content type="html"><![CDATA[<p>用管理员权限打开DOS命令窗口，输入以下的命令即可</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /skms kms.v0v.bid &amp;&amp; slmgr /ato</span><br></pre></td></tr></table></figure><p>本人win10亲测有效，其他的版本暂时没试过</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 杂类 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 电脑知识 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>vue自定义组件</title>
       <link href="/posts/ec24c4ee.html"/>
       <url>/posts/ec24c4ee.html</url>
@@ -196,31 +196,6 @@
         <tags>
             
             <tag> vue笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>如何处理亿级用户的登录状态查询</title>
-      <link href="/posts/41763455.html"/>
-      <url>/posts/41763455.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="假如系统需要统计一个上亿级别的的用户在线状态">假如系统需要统计一个上亿级别的的用户在线状态</h2><h3 id="方案一：">方案一：</h3><p>在数据库的基础上增加一个缓存，然后把登录状态存到redis里，在redis中去定义set类型的key，主要用来存储记录登录用户的ID。现在我们假设这个key叫login_user，如果用户登录，就往login_user中增加这个用户的id，如果用户登出就把这个key从set中删去，然后再用scard命令来统计set中的用户id的数量。</p><p>（但是这个方法对内存的消耗会有点大）</p><h3 id="方案二：">方案二：</h3><p>使用redis的bitmap来存储数据，bitmap本身就是为了亿级数据而诞生的，可以使用他的几个命令，如setbit、getbit和bigcount，用户登录可以用setbit命令去设置一个key为login_status的内容，然后将用户id作为一个位移值，将这个值设为1，即状态为1，那么当用户登出的时候，我们可以使用setbit命令将其状态改为0，如果是判断某个用户是否在线，可以使用getbit命令，如果是统计登录用户数量，可以使用bigcount来进行统计</p><p>（此方法优点是快，去重查重效率高，缺点是bitmap的位移值只能是数字，用户id也只能是自增的纯数字id，不适合分布式架构）</p><h2 id="如果是实现热力地图">如果是实现热力地图</h2><p>则可以使用redis的GEO，使用geoadd、geopos和geohash这些命令</p><p>当然，现在使用es的GEO更省事，如果加上ELK组合，则可以直接生成</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
             
         </tags>
       
@@ -254,11 +229,36 @@
     
     
     <entry>
-      <title>测试文章</title>
-      <link href="/posts/7a6a6b5a.html"/>
-      <url>/posts/7a6a6b5a.html</url>
+      <title>windows激活</title>
+      <link href="/posts/91cf1372.html"/>
+      <url>/posts/91cf1372.html</url>
       
-        <content type="html"><![CDATA[<h2 id="这是一个测试文章">这是一个测试文章</h2><p>以下为文章格式测试</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<p>用管理员权限打开DOS命令窗口，输入以下的命令即可</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /skms kms.v0v.bid &amp;&amp; slmgr /ato</span><br></pre></td></tr></table></figure><p>本人win10亲测有效，其他的版本暂时没试过</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电脑知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何处理亿级用户的登录状态查询</title>
+      <link href="/posts/41763455.html"/>
+      <url>/posts/41763455.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="假如系统需要统计一个上亿级别的的用户在线状态">假如系统需要统计一个上亿级别的的用户在线状态</h2><h3 id="方案一：">方案一：</h3><p>在数据库的基础上增加一个缓存，然后把登录状态存到redis里，在redis中去定义set类型的key，主要用来存储记录登录用户的ID。现在我们假设这个key叫login_user，如果用户登录，就往login_user中增加这个用户的id，如果用户登出就把这个key从set中删去，然后再用scard命令来统计set中的用户id的数量。</p><p>（但是这个方法对内存的消耗会有点大）</p><h3 id="方案二：">方案二：</h3><p>使用redis的bitmap来存储数据，bitmap本身就是为了亿级数据而诞生的，可以使用他的几个命令，如setbit、getbit和bigcount，用户登录可以用setbit命令去设置一个key为login_status的内容，然后将用户id作为一个位移值，将这个值设为1，即状态为1，那么当用户登出的时候，我们可以使用setbit命令将其状态改为0，如果是判断某个用户是否在线，可以使用getbit命令，如果是统计登录用户数量，可以使用bigcount来进行统计</p><p>（此方法优点是快，去重查重效率高，缺点是bitmap的位移值只能是数字，用户id也只能是自增的纯数字id，不适合分布式架构）</p><h2 id="如果是实现热力地图">如果是实现热力地图</h2><p>则可以使用redis的GEO，使用geoadd、geopos和geohash这些命令</p><p>当然，现在使用es的GEO更省事，如果加上ELK组合，则可以直接生成</p>]]></content>
       
       
       <categories>
@@ -354,6 +354,31 @@
     
     
     <entry>
+      <title>欢迎来到我的博客</title>
+      <link href="/posts/b250e9bb.html"/>
+      <url>/posts/b250e9bb.html</url>
+      
+        <content type="html"><![CDATA[<!-- # 本地图片 --><!-- <img src="/assets/pusheencode.webp" alt="示例图片" style="zoom:50%;" /> --><h1>一起变强吧🚅</h1><p><img src="https://w.wallhaven.cc/full/ex/wallhaven-exyp3k.jpg" alt="code"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 公告 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日志 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>菜谱</title>
       <link href="/posts/70a7eda9.html"/>
       <url>/posts/70a7eda9.html</url>
@@ -396,31 +421,6 @@
         <tags>
             
             <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>欢迎来到我的博客</title>
-      <link href="/posts/b250e9bb.html"/>
-      <url>/posts/b250e9bb.html</url>
-      
-        <content type="html"><![CDATA[<!-- # 本地图片 --><!-- <img src="/assets/pusheencode.webp" alt="示例图片" style="zoom:50%;" /> --><h1>一起变强吧🚅</h1><p><img src="https://w.wallhaven.cc/full/ex/wallhaven-exyp3k.jpg" alt="code"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 公告 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 日志 </tag>
             
         </tags>
       
