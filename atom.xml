@@ -6,7 +6,7 @@
   <link href="https://www.mentaltest.run/atom.xml" rel="self"/>
   
   <link href="https://www.mentaltest.run/"/>
-  <updated>2023-12-07T15:30:54.036Z</updated>
+  <updated>2023-12-07T15:33:11.523Z</updated>
   <id>https://www.mentaltest.run/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.mentaltest.run/posts/ef1d4915.html"/>
     <id>https://www.mentaltest.run/posts/ef1d4915.html</id>
     <published>2023-12-07T15:31:45.505Z</published>
-    <updated>2023-12-07T15:30:54.036Z</updated>
+    <updated>2023-12-07T15:33:11.523Z</updated>
     
     <content type="html"><![CDATA[<h2 id="让el-input只能输入数字"><a href="#让el-input只能输入数字" class="headerlink" title="让el-input只能输入数字"></a>让el-input只能输入数字</h2><p>最近在做一个项目，业务小姐姐要求我们前端一个输入框只能输入数字，本来是一个很简单的事，丢个<strong>el-input-number</strong>完事。然而，业务小姐姐觉得计数器两端的按钮太丑🤨，好吧，那就换成<strong>el-input</strong>，给他type=number,企图蒙混过关，结果被发现要求再改🤪，饶了我这个后端吧，为什么这么大个公司招不到一个前端😵，所以最后想到了用正则表达式将数据过滤一遍，所以如下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">        &lt;!-- 付款方编码 --&gt;</span><br><span class="line">      &lt;el-col :span=&quot;8&quot;&gt;</span><br><span class="line">        &lt;el-form-item label=&quot;Payer&quot; prop=&quot;payer&quot;&gt;</span><br><span class="line">          &lt;el-input type=&quot;text&quot;</span><br><span class="line">                    oninput=&quot;value=value.replace(/[^\d.]/g,&#x27;&#x27;)&quot;</span><br><span class="line">                    v-model=&quot;form.payer&quot;</span><br><span class="line">                    label=&quot;Please enter Payer&quot;</span><br><span class="line">          &gt;&lt;/el-input&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/el-form-item&gt;</span><br><span class="line">      &lt;/el-col&gt;</span><br></pre></td></tr></table></figure><p>type=”text”，然后<em>oninput</em>监听输入值，再通过<em>正则表达式</em>去掉所有非数字，这样就行了，不过还是能输入小数点，如果要求只能输入整数，则需要再改进，以后有空再想吧</p>]]></content>
     
@@ -143,6 +143,27 @@
   </entry>
   
   <entry>
+    <title>测试文章</title>
+    <link href="https://www.mentaltest.run/posts/7a6a6b5a.html"/>
+    <id>https://www.mentaltest.run/posts/7a6a6b5a.html</id>
+    <published>2023-08-13T13:09:51.516Z</published>
+    <updated>2023-08-14T12:39:26.534Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="这是一个测试文章"><a href="#这是一个测试文章" class="headerlink" title="这是一个测试文章"></a>这是一个测试文章</h2><p>以下为文章格式测试</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">这是一个测试文章</summary>
+    
+    
+    
+    <category term="杂类" scheme="https://www.mentaltest.run/categories/%E6%9D%82%E7%B1%BB/"/>
+    
+    
+    <category term="测试" scheme="https://www.mentaltest.run/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>numpy数据分析</title>
     <link href="https://www.mentaltest.run/posts/9d3872d5.html"/>
     <id>https://www.mentaltest.run/posts/9d3872d5.html</id>
@@ -181,27 +202,6 @@
     
     
     <category term="java基础" scheme="https://www.mentaltest.run/tags/java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>测试文章</title>
-    <link href="https://www.mentaltest.run/posts/7a6a6b5a.html"/>
-    <id>https://www.mentaltest.run/posts/7a6a6b5a.html</id>
-    <published>2023-08-13T13:09:51.516Z</published>
-    <updated>2023-08-14T12:39:26.534Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="这是一个测试文章"><a href="#这是一个测试文章" class="headerlink" title="这是一个测试文章"></a>这是一个测试文章</h2><p>以下为文章格式测试</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">这是一个测试文章</summary>
-    
-    
-    
-    <category term="杂类" scheme="https://www.mentaltest.run/categories/%E6%9D%82%E7%B1%BB/"/>
-    
-    
-    <category term="测试" scheme="https://www.mentaltest.run/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
@@ -332,27 +332,6 @@
   </entry>
   
   <entry>
-    <title>常用sql语句</title>
-    <link href="https://www.mentaltest.run/posts/6605dc2.html"/>
-    <id>https://www.mentaltest.run/posts/6605dc2.html</id>
-    <published>2023-08-13T13:09:51.516Z</published>
-    <updated>2023-08-14T12:38:06.548Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="展示所有数据库"><a href="#展示所有数据库" class="headerlink" title="展示所有数据库"></a>展示所有数据库</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases</span><br></pre></td></tr></table></figure><h5 id="创建一个student-grade表"><a href="#创建一个student-grade表" class="headerlink" title="创建一个student_grade表"></a>创建一个student_grade表</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student_grade(</span><br><span class="line">id <span class="type">int</span>,</span><br><span class="line">name <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">enligsh <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>),</span><br><span class="line">math <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>),</span><br><span class="line">chinese <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p><em>此处enligsh为故意写错，方便下面修改示范</em></p><h5 id="插入两个数据"><a href="#插入两个数据" class="headerlink" title="插入两个数据"></a>插入两个数据</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student_grade ( id, NAME, enligsh, math, chinese )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">(<span class="number">1</span>,<span class="string">&#x27;李狗蛋&#x27;</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">&#x27;聪明的李某人&#x27;</span>,<span class="number">99</span>,<span class="number">99</span>,<span class="number">99</span>);</span><br></pre></td></tr></table></figure><h5 id="查看表结构"><a href="#查看表结构" class="headerlink" title="查看表结构"></a>查看表结构</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">desc</span> student_grade</span><br></pre></td></tr></table></figure><p>此时发现enligsh拼写错误</p><h5 id="修改字段名"><a href="#修改字段名" class="headerlink" title="修改字段名"></a>修改字段名</h5><p>参考例句：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 CHANGE 旧字段名 新字段名 新数据类型;</span><br></pre></td></tr></table></figure><p>此处所用：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student_grade CHANGE enligsh  english <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>);</span><br></pre></td></tr></table></figure><p>这个方法也可以用来修改指定字段的数据类型，<strong><em>但是修改字段类型需要保证改后的数据类型能兼容之前的数据</em></strong>，例如此处我修改name的长度</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student_grade CHANGE name name <span class="type">VARCHAR</span>(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">经常会用到，但是经常忘记的sql语句</summary>
-    
-    
-    
-    <category term="java笔记" scheme="https://www.mentaltest.run/categories/java%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="sql技术" scheme="https://www.mentaltest.run/tags/sql%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
     <title>微信小程序笔记（一）</title>
     <link href="https://www.mentaltest.run/posts/a920c857.html"/>
     <id>https://www.mentaltest.run/posts/a920c857.html</id>
@@ -374,16 +353,37 @@
   </entry>
   
   <entry>
-    <title>更新日志</title>
-    <link href="https://www.mentaltest.run/posts/5a717bf0.html"/>
-    <id>https://www.mentaltest.run/posts/5a717bf0.html</id>
+    <title>常用sql语句</title>
+    <link href="https://www.mentaltest.run/posts/6605dc2.html"/>
+    <id>https://www.mentaltest.run/posts/6605dc2.html</id>
     <published>2023-08-13T13:09:51.516Z</published>
-    <updated>2023-08-21T16:01:56.310Z</updated>
+    <updated>2023-08-14T12:38:06.548Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="2022-12-1更新内容"><a href="#2022-12-1更新内容" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改博客音乐播放器，原网易云，现QQ音乐<br>2.因为收到大量广告评论，现关闭评论功能<br>3.更改网页图标<br>4.更改图片显示方式，增快读取速度。（但是因为使用vercel部署的原因，国内访问还是较慢，但是能接受，以后再想办法）</p><h3 id="2022-12-1更新内容-1"><a href="#2022-12-1更新内容-1" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改标签和分类<br>2.修补部分显示错误</p><h3 id="2023-1-12更新内容"><a href="#2023-1-12更新内容" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.下线音乐播放器</p><h3 id="2023-1-12更新内容-1"><a href="#2023-1-12更新内容-1" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.重新上线音乐播放器<br>2.首页底部增加音乐播放器<br>3.新增挂件<br>4.暂时下线github贡献图<br>5.修改dns，加速访问速度<br>6.白天模式和夜间模式切换时壁纸改变</p><h3 id="2023-4-24更新内容"><a href="#2023-4-24更新内容" class="headerlink" title="2023-4-24更新内容"></a>2023-4-24更新内容</h3><p>1.部分网页增加访问密码</p><h3 id="2023-4-25更新内容"><a href="#2023-4-25更新内容" class="headerlink" title="2023-4-25更新内容"></a>2023-4-25更新内容</h3><p>1.新增评论功能</p><h3 id="2023-5-16更新内容"><a href="#2023-5-16更新内容" class="headerlink" title="2023-5-16更新内容"></a>2023-5-16更新内容</h3><p>1.新增两个分类，目前分类比较复杂，后期还会做调整<br>2.新增gitee联系方式</p><h3 id="2023-8-16更新内容"><a href="#2023-8-16更新内容" class="headerlink" title="2023-8-16更新内容"></a>2023-8-16更新内容</h3><p>1.页面重构，将持续不定期的修改页面<br>2.修改付款码<br>3.最近项目太忙，有空再进行其他修改，心累，下次一定找个双休的</p>]]></content>
+    <content type="html"><![CDATA[<h5 id="展示所有数据库"><a href="#展示所有数据库" class="headerlink" title="展示所有数据库"></a>展示所有数据库</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases</span><br></pre></td></tr></table></figure><h5 id="创建一个student-grade表"><a href="#创建一个student-grade表" class="headerlink" title="创建一个student_grade表"></a>创建一个student_grade表</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student_grade(</span><br><span class="line">id <span class="type">int</span>,</span><br><span class="line">name <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">enligsh <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>),</span><br><span class="line">math <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>),</span><br><span class="line">chinese <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p><em>此处enligsh为故意写错，方便下面修改示范</em></p><h5 id="插入两个数据"><a href="#插入两个数据" class="headerlink" title="插入两个数据"></a>插入两个数据</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student_grade ( id, NAME, enligsh, math, chinese )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">(<span class="number">1</span>,<span class="string">&#x27;李狗蛋&#x27;</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">&#x27;聪明的李某人&#x27;</span>,<span class="number">99</span>,<span class="number">99</span>,<span class="number">99</span>);</span><br></pre></td></tr></table></figure><h5 id="查看表结构"><a href="#查看表结构" class="headerlink" title="查看表结构"></a>查看表结构</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">desc</span> student_grade</span><br></pre></td></tr></table></figure><p>此时发现enligsh拼写错误</p><h5 id="修改字段名"><a href="#修改字段名" class="headerlink" title="修改字段名"></a>修改字段名</h5><p>参考例句：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 CHANGE 旧字段名 新字段名 新数据类型;</span><br></pre></td></tr></table></figure><p>此处所用：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student_grade CHANGE enligsh  english <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>);</span><br></pre></td></tr></table></figure><p>这个方法也可以用来修改指定字段的数据类型，<strong><em>但是修改字段类型需要保证改后的数据类型能兼容之前的数据</em></strong>，例如此处我修改name的长度</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student_grade CHANGE name name <span class="type">VARCHAR</span>(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>]]></content>
     
     
-    <summary type="html">记录博客的更新</summary>
+    <summary type="html">经常会用到，但是经常忘记的sql语句</summary>
+    
+    
+    
+    <category term="java笔记" scheme="https://www.mentaltest.run/categories/java%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="sql技术" scheme="https://www.mentaltest.run/tags/sql%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>欢迎来到我的博客</title>
+    <link href="https://www.mentaltest.run/posts/b250e9bb.html"/>
+    <id>https://www.mentaltest.run/posts/b250e9bb.html</id>
+    <published>2023-08-13T13:09:51.516Z</published>
+    <updated>2023-08-14T12:38:23.713Z</updated>
+    
+    <content type="html"><![CDATA[<!-- # 本地图片 --><!-- <img src="/assets/pusheencode.webp" alt="示例图片" style="zoom:50%;" /> --><h1 id="一起变强吧🚅"><a href="#一起变强吧🚅" class="headerlink" title="一起变强吧🚅"></a>一起变强吧🚅</h1><p><img src="https://w.wallhaven.cc/full/ex/wallhaven-exyp3k.jpg" alt="code"></p>]]></content>
+    
+    
+    <summary type="html">欢迎来到我的博客</summary>
     
     
     
@@ -416,16 +416,16 @@
   </entry>
   
   <entry>
-    <title>欢迎来到我的博客</title>
-    <link href="https://www.mentaltest.run/posts/b250e9bb.html"/>
-    <id>https://www.mentaltest.run/posts/b250e9bb.html</id>
+    <title>更新日志</title>
+    <link href="https://www.mentaltest.run/posts/5a717bf0.html"/>
+    <id>https://www.mentaltest.run/posts/5a717bf0.html</id>
     <published>2023-08-13T13:09:51.516Z</published>
-    <updated>2023-08-14T12:38:23.713Z</updated>
+    <updated>2023-08-21T16:01:56.310Z</updated>
     
-    <content type="html"><![CDATA[<!-- # 本地图片 --><!-- <img src="/assets/pusheencode.webp" alt="示例图片" style="zoom:50%;" /> --><h1 id="一起变强吧🚅"><a href="#一起变强吧🚅" class="headerlink" title="一起变强吧🚅"></a>一起变强吧🚅</h1><p><img src="https://w.wallhaven.cc/full/ex/wallhaven-exyp3k.jpg" alt="code"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="2022-12-1更新内容"><a href="#2022-12-1更新内容" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改博客音乐播放器，原网易云，现QQ音乐<br>2.因为收到大量广告评论，现关闭评论功能<br>3.更改网页图标<br>4.更改图片显示方式，增快读取速度。（但是因为使用vercel部署的原因，国内访问还是较慢，但是能接受，以后再想办法）</p><h3 id="2022-12-1更新内容-1"><a href="#2022-12-1更新内容-1" class="headerlink" title="2022-12-1更新内容"></a>2022-12-1更新内容</h3><p>1.修改标签和分类<br>2.修补部分显示错误</p><h3 id="2023-1-12更新内容"><a href="#2023-1-12更新内容" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.下线音乐播放器</p><h3 id="2023-1-12更新内容-1"><a href="#2023-1-12更新内容-1" class="headerlink" title="2023-1-12更新内容"></a>2023-1-12更新内容</h3><p>1.重新上线音乐播放器<br>2.首页底部增加音乐播放器<br>3.新增挂件<br>4.暂时下线github贡献图<br>5.修改dns，加速访问速度<br>6.白天模式和夜间模式切换时壁纸改变</p><h3 id="2023-4-24更新内容"><a href="#2023-4-24更新内容" class="headerlink" title="2023-4-24更新内容"></a>2023-4-24更新内容</h3><p>1.部分网页增加访问密码</p><h3 id="2023-4-25更新内容"><a href="#2023-4-25更新内容" class="headerlink" title="2023-4-25更新内容"></a>2023-4-25更新内容</h3><p>1.新增评论功能</p><h3 id="2023-5-16更新内容"><a href="#2023-5-16更新内容" class="headerlink" title="2023-5-16更新内容"></a>2023-5-16更新内容</h3><p>1.新增两个分类，目前分类比较复杂，后期还会做调整<br>2.新增gitee联系方式</p><h3 id="2023-8-16更新内容"><a href="#2023-8-16更新内容" class="headerlink" title="2023-8-16更新内容"></a>2023-8-16更新内容</h3><p>1.页面重构，将持续不定期的修改页面<br>2.修改付款码<br>3.最近项目太忙，有空再进行其他修改，心累，下次一定找个双休的</p>]]></content>
     
     
-    <summary type="html">欢迎来到我的博客</summary>
+    <summary type="html">记录博客的更新</summary>
     
     
     
