@@ -290,7 +290,7 @@
   </url>
   
   <url>
-    <loc>https://www.mentaltest.run/box/nav/index.html</loc>
+    <loc>https://www.mentaltest.run/box/gallery/index.html</loc>
     
     <lastmod>2023-08-13</lastmod>
     
@@ -299,7 +299,7 @@
   </url>
   
   <url>
-    <loc>https://www.mentaltest.run/box/gallery/index.html</loc>
+    <loc>https://www.mentaltest.run/box/nav/index.html</loc>
     
     <lastmod>2023-08-13</lastmod>
     
@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://www.mentaltest.run/site/census/index.html</loc>
+    <loc>https://www.mentaltest.run/life/games/index.html</loc>
     
     <lastmod>2023-08-13</lastmod>
     
@@ -326,7 +326,7 @@
   </url>
   
   <url>
-    <loc>https://www.mentaltest.run/life/games/index.html</loc>
+    <loc>https://www.mentaltest.run/site/census/index.html</loc>
     
     <lastmod>2023-08-13</lastmod>
     
@@ -385,20 +385,6 @@
   </url>
   
   <url>
-    <loc>https://www.mentaltest.run/tags/knife4j/</loc>
-    <lastmod>2023-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mentaltest.run/tags/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2023-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mentaltest.run/tags/Markdown/</loc>
     <lastmod>2023-12-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -407,6 +393,13 @@
   
   <url>
     <loc>https://www.mentaltest.run/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/</loc>
+    <lastmod>2023-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mentaltest.run/tags/knife4j/</loc>
     <lastmod>2023-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -434,7 +427,21 @@
   </url>
   
   <url>
+    <loc>https://www.mentaltest.run/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2023-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.mentaltest.run/tags/vue%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2023-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mentaltest.run/tags/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2023-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -448,14 +455,14 @@
   </url>
   
   <url>
-    <loc>https://www.mentaltest.run/tags/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/</loc>
+    <loc>https://www.mentaltest.run/tags/%E6%83%85%E6%99%AF%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2023-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.mentaltest.run/tags/%E7%88%AC%E8%99%AB/</loc>
+    <loc>https://www.mentaltest.run/tags/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2023-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -476,13 +483,6 @@
   </url>
   
   <url>
-    <loc>https://www.mentaltest.run/tags/%E6%83%85%E6%99%AF%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2023-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.mentaltest.run/tags/%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2023-12-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -490,14 +490,7 @@
   </url>
   
   <url>
-    <loc>https://www.mentaltest.run/tags/java%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
-    <lastmod>2023-12-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.mentaltest.run/tags/oss%E4%B8%8A%E4%BC%A0/</loc>
+    <loc>https://www.mentaltest.run/tags/%E8%8F%9C%E8%B0%B1/</loc>
     <lastmod>2023-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -511,7 +504,14 @@
   </url>
   
   <url>
-    <loc>https://www.mentaltest.run/tags/%E8%8F%9C%E8%B0%B1/</loc>
+    <loc>https://www.mentaltest.run/tags/oss%E4%B8%8A%E4%BC%A0/</loc>
+    <lastmod>2023-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.mentaltest.run/tags/java%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
     <lastmod>2023-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
