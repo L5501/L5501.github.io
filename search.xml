@@ -154,6 +154,31 @@
     
     
     <entry>
+      <title>knife4j制作api文档</title>
+      <link href="/posts/b112853d.html"/>
+      <url>/posts/b112853d.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="引入knife4j">引入knife4j</h3><table><thead><tr><th style="text-align:center">版本</th><th style="text-align:center">说明</th></tr></thead><tbody><tr><td style="text-align:center">1.9.6</td><td style="text-align:center">蓝色皮肤风格，开始更名，增加更多后端模块</td></tr><tr><td style="text-align:center">2.0~2.0.5</td><td style="text-align:center">Ui重写，底层依赖的springfox框架版本是2.9.2</td></tr><tr><td style="text-align:center">2.0.6~</td><td style="text-align:center">springfox框架版本升级至2.10.5，OpenAPI规范是V2</td></tr><tr><td style="text-align:center">3.0~</td><td style="text-align:center">底层依赖spingfox框架版本升级至3.0.3，OpenAPI规范是V3</td></tr></tbody></table><p>以下为2.0.9依赖，相对比较稳定，3.X坑有点多</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;knife4j-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;<span class="number">2.0</span><span class="number">.9</span>&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br></pre></td></tr></table></figure><h3 id="创建Swagger配置类">创建Swagger配置类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiOperation;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.builders.ApiInfoBuilder;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.builders.RequestHandlerSelectors;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.service.ApiInfo;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.service.Contact;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.spi.DocumentationType;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.spring.web.plugins.Docket;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger2WebMvc</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SwaggerConfig</span> &#123;</span><br><span class="line">    <span class="comment">// 创建Docket存入容器，Docket代表一个接口文档</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Docket <span class="title function_">webApiConfig</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Docket</span>(DocumentationType.SWAGGER_2)</span><br><span class="line">                <span class="comment">// 创建接口文档的具体信息</span></span><br><span class="line">                .apiInfo(webApiInfo())</span><br><span class="line">                <span class="comment">// 创建选择器，控制哪些接口被加入文档</span></span><br><span class="line">                .select()</span><br><span class="line">                <span class="comment">// 指定@ApiOperation标注的接口被加入文档</span></span><br><span class="line">                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建接口文档的具体信息，会显示在接口文档页面中</span></span><br><span class="line">    <span class="keyword">private</span> ApiInfo <span class="title function_">webApiInfo</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ApiInfoBuilder</span>()</span><br><span class="line">                <span class="comment">// 文档标题</span></span><br><span class="line">                .title(<span class="string">&quot;标题：系统接口文档&quot;</span>)</span><br><span class="line">                <span class="comment">// 文档描述</span></span><br><span class="line">                .description(<span class="string">&quot;描述：本文档描述了系统的接口定义&quot;</span>)</span><br><span class="line">                <span class="comment">// 版本</span></span><br><span class="line">                .version(<span class="string">&quot;1.0&quot;</span>)</span><br><span class="line">                <span class="comment">// 联系人信息</span></span><br><span class="line">                .contact(<span class="keyword">new</span> <span class="title class_">Contact</span>(<span class="string">&quot;龙场悟道中&quot;</span>, <span class="string">&quot;https://L5501.run&quot;</span>, <span class="string">&quot;L55011225@gmail.com&quot;</span>))</span><br><span class="line">                <span class="comment">// 版权</span></span><br><span class="line">                .license(<span class="string">&quot;龙场悟道中&quot;</span>)</span><br><span class="line">                <span class="comment">// 版权地址</span></span><br><span class="line">                .licenseUrl(<span class="string">&quot;https://L5501.run&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h3 id="实体类测试">实体类测试</h3><p>如果只是做了这些配置，并不会在接口文档中记录，如果需要被记录，则必须在加了swagger注解的controller中使用</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiModel;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiModelProperty;</span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ApiModel(&quot;手机实体类&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Phone</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;id&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;手机名称&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;手机价格&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> Double price;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="控制类测试">控制类测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.ll.knife4j_demo.entity.Phone;</span><br><span class="line"><span class="keyword">import</span> com.ll.knife4j_demo.entity.User;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.Api;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiOperation;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiParam;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;controller1&quot;)</span></span><br><span class="line"><span class="meta">@Api(tags = &quot;这是一个应用&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;api1/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;api1&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">api1</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> <span class="meta">@ApiParam(&quot;用户id&quot;)</span> String id)</span>&#123;</span><br><span class="line">        <span class="comment">// 伪代码</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping(&quot;api2&quot;)</span></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;api2&quot;)</span></span><br><span class="line">    <span class="comment">// 如果这里没有引入User类，则不会在文档中出现User</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">api2</span><span class="params">(<span class="meta">@RequestBody</span> User user)</span> &#123;</span><br><span class="line">        <span class="comment">// 伪代码</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="YML文件相关配置">YML文件相关配置</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">1225</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">demo</span></span><br><span class="line"></span><br><span class="line"><span class="attr">knife4j:</span></span><br><span class="line">  <span class="comment"># 开启增强配置</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 开启认证功能，默认为false</span></span><br><span class="line">  <span class="attr">basic:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># 用户名</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">luke</span></span><br><span class="line">    <span class="comment"># 密码</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123456</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> java笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> knife4j </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>测试文章</title>
       <link href="/posts/7a6a6b5a.html"/>
       <url>/posts/7a6a6b5a.html</url>
@@ -254,31 +279,6 @@
     
     
     <entry>
-      <title>knife4j制作api文档</title>
-      <link href="/posts/b112853d.html"/>
-      <url>/posts/b112853d.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="引入knife4j">引入knife4j</h3><table><thead><tr><th style="text-align:center">版本</th><th style="text-align:center">说明</th></tr></thead><tbody><tr><td style="text-align:center">1.9.6</td><td style="text-align:center">蓝色皮肤风格，开始更名，增加更多后端模块</td></tr><tr><td style="text-align:center">2.0~2.0.5</td><td style="text-align:center">Ui重写，底层依赖的springfox框架版本是2.9.2</td></tr><tr><td style="text-align:center">2.0.6~</td><td style="text-align:center">springfox框架版本升级至2.10.5，OpenAPI规范是V2</td></tr><tr><td style="text-align:center">3.0~</td><td style="text-align:center">底层依赖spingfox框架版本升级至3.0.3，OpenAPI规范是V3</td></tr></tbody></table><p>以下为2.0.9依赖，相对比较稳定，3.X坑有点多</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;knife4j-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;<span class="number">2.0</span><span class="number">.9</span>&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br></pre></td></tr></table></figure><h3 id="创建Swagger配置类">创建Swagger配置类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiOperation;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.builders.ApiInfoBuilder;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.builders.RequestHandlerSelectors;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.service.ApiInfo;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.service.Contact;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.spi.DocumentationType;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.spring.web.plugins.Docket;</span><br><span class="line"><span class="keyword">import</span> springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger2WebMvc</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SwaggerConfig</span> &#123;</span><br><span class="line">    <span class="comment">// 创建Docket存入容器，Docket代表一个接口文档</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Docket <span class="title function_">webApiConfig</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Docket</span>(DocumentationType.SWAGGER_2)</span><br><span class="line">                <span class="comment">// 创建接口文档的具体信息</span></span><br><span class="line">                .apiInfo(webApiInfo())</span><br><span class="line">                <span class="comment">// 创建选择器，控制哪些接口被加入文档</span></span><br><span class="line">                .select()</span><br><span class="line">                <span class="comment">// 指定@ApiOperation标注的接口被加入文档</span></span><br><span class="line">                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建接口文档的具体信息，会显示在接口文档页面中</span></span><br><span class="line">    <span class="keyword">private</span> ApiInfo <span class="title function_">webApiInfo</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ApiInfoBuilder</span>()</span><br><span class="line">                <span class="comment">// 文档标题</span></span><br><span class="line">                .title(<span class="string">&quot;标题：系统接口文档&quot;</span>)</span><br><span class="line">                <span class="comment">// 文档描述</span></span><br><span class="line">                .description(<span class="string">&quot;描述：本文档描述了系统的接口定义&quot;</span>)</span><br><span class="line">                <span class="comment">// 版本</span></span><br><span class="line">                .version(<span class="string">&quot;1.0&quot;</span>)</span><br><span class="line">                <span class="comment">// 联系人信息</span></span><br><span class="line">                .contact(<span class="keyword">new</span> <span class="title class_">Contact</span>(<span class="string">&quot;龙场悟道中&quot;</span>, <span class="string">&quot;https://L5501.run&quot;</span>, <span class="string">&quot;L55011225@gmail.com&quot;</span>))</span><br><span class="line">                <span class="comment">// 版权</span></span><br><span class="line">                .license(<span class="string">&quot;龙场悟道中&quot;</span>)</span><br><span class="line">                <span class="comment">// 版权地址</span></span><br><span class="line">                .licenseUrl(<span class="string">&quot;https://L5501.run&quot;</span>)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h3 id="实体类测试">实体类测试</h3><p>如果只是做了这些配置，并不会在接口文档中记录，如果需要被记录，则必须在加了swagger注解的controller中使用</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiModel;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiModelProperty;</span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ApiModel(&quot;手机实体类&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Phone</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;id&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;手机名称&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;手机价格&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> Double price;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="控制类测试">控制类测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.ll.knife4j_demo.entity.Phone;</span><br><span class="line"><span class="keyword">import</span> com.ll.knife4j_demo.entity.User;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.Api;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiOperation;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiParam;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;controller1&quot;)</span></span><br><span class="line"><span class="meta">@Api(tags = &quot;这是一个应用&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;api1/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;api1&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">api1</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> <span class="meta">@ApiParam(&quot;用户id&quot;)</span> String id)</span>&#123;</span><br><span class="line">        <span class="comment">// 伪代码</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping(&quot;api2&quot;)</span></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;api2&quot;)</span></span><br><span class="line">    <span class="comment">// 如果这里没有引入User类，则不会在文档中出现User</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">api2</span><span class="params">(<span class="meta">@RequestBody</span> User user)</span> &#123;</span><br><span class="line">        <span class="comment">// 伪代码</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="YML文件相关配置">YML文件相关配置</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">1225</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">demo</span></span><br><span class="line"></span><br><span class="line"><span class="attr">knife4j:</span></span><br><span class="line">  <span class="comment"># 开启增强配置</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 开启认证功能，默认为false</span></span><br><span class="line">  <span class="attr">basic:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># 用户名</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">luke</span></span><br><span class="line">    <span class="comment"># 密码</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123456</span></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> java笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> knife4j </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>vue自定义组件</title>
       <link href="/posts/ec24c4ee.html"/>
       <url>/posts/ec24c4ee.html</url>
@@ -354,31 +354,6 @@
     
     
     <entry>
-      <title>如何处理亿级用户的登录状态查询</title>
-      <link href="/posts/41763455.html"/>
-      <url>/posts/41763455.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="假如系统需要统计一个上亿级别的的用户在线状态">假如系统需要统计一个上亿级别的的用户在线状态</h2><h3 id="方案一：">方案一：</h3><p>在数据库的基础上增加一个缓存，然后把登录状态存到redis里，在redis中去定义set类型的key，主要用来存储记录登录用户的ID。现在我们假设这个key叫login_user，如果用户登录，就往login_user中增加这个用户的id，如果用户登出就把这个key从set中删去，然后再用scard命令来统计set中的用户id的数量。</p><p>（但是这个方法对内存的消耗会有点大）</p><h3 id="方案二：">方案二：</h3><p>使用redis的bitmap来存储数据，bitmap本身就是为了亿级数据而诞生的，可以使用他的几个命令，如setbit、getbit和bigcount，用户登录可以用setbit命令去设置一个key为login_status的内容，然后将用户id作为一个位移值，将这个值设为1，即状态为1，那么当用户登出的时候，我们可以使用setbit命令将其状态改为0，如果是判断某个用户是否在线，可以使用getbit命令，如果是统计登录用户数量，可以使用bigcount来进行统计</p><p>（此方法优点是快，去重查重效率高，缺点是bitmap的位移值只能是数字，用户id也只能是自增的纯数字id，不适合分布式架构）</p><h2 id="如果是实现热力地图">如果是实现热力地图</h2><p>则可以使用redis的GEO，使用geoadd、geopos和geohash这些命令</p><p>当然，现在使用es的GEO更省事，如果加上ELK组合，则可以直接生成</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 情景问题 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>简单的python爬虫</title>
       <link href="/posts/2e8932a3.html"/>
       <url>/posts/2e8932a3.html</url>
@@ -396,6 +371,31 @@
         <tags>
             
             <tag> 爬虫 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何处理亿级用户的登录状态查询</title>
+      <link href="/posts/41763455.html"/>
+      <url>/posts/41763455.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="假如系统需要统计一个上亿级别的的用户在线状态">假如系统需要统计一个上亿级别的的用户在线状态</h2><h3 id="方案一：">方案一：</h3><p>在数据库的基础上增加一个缓存，然后把登录状态存到redis里，在redis中去定义set类型的key，主要用来存储记录登录用户的ID。现在我们假设这个key叫login_user，如果用户登录，就往login_user中增加这个用户的id，如果用户登出就把这个key从set中删去，然后再用scard命令来统计set中的用户id的数量。</p><p>（但是这个方法对内存的消耗会有点大）</p><h3 id="方案二：">方案二：</h3><p>使用redis的bitmap来存储数据，bitmap本身就是为了亿级数据而诞生的，可以使用他的几个命令，如setbit、getbit和bigcount，用户登录可以用setbit命令去设置一个key为login_status的内容，然后将用户id作为一个位移值，将这个值设为1，即状态为1，那么当用户登出的时候，我们可以使用setbit命令将其状态改为0，如果是判断某个用户是否在线，可以使用getbit命令，如果是统计登录用户数量，可以使用bigcount来进行统计</p><p>（此方法优点是快，去重查重效率高，缺点是bitmap的位移值只能是数字，用户id也只能是自增的纯数字id，不适合分布式架构）</p><h2 id="如果是实现热力地图">如果是实现热力地图</h2><p>则可以使用redis的GEO，使用geoadd、geopos和geohash这些命令</p><p>当然，现在使用es的GEO更省事，如果加上ELK组合，则可以直接生成</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 情景问题 </tag>
             
         </tags>
       
@@ -454,31 +454,6 @@
     
     
     <entry>
-      <title>菜谱</title>
-      <link href="/posts/70a7eda9.html"/>
-      <url>/posts/70a7eda9.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="擂辣椒茄子皮蛋">擂辣椒茄子皮蛋</h3><p>主料：茄子(1个)，皮蛋（2个)，辣椒（看个人，一般两个）</p><p>辅料：蒜，芝麻油</p><p>酱料：老抽（2勺），陈醋（2勺），蚝油（1勺），少量盐</p><p>步骤：</p><ol><li>茄子洗净去皮切成小粗条，放锅上去蒸</li><li>皮蛋剥壳切块</li><li>茄子蒸软后放入碗中</li><li>大蒜切粒</li><li>辣椒洗干净放入锅中加油煎软，撕去表皮</li><li>放放酱料一起捣烂</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 杂类 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 菜谱 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>更新日志</title>
       <link href="/posts/5a717bf0.html"/>
       <url>/posts/5a717bf0.html</url>
@@ -496,6 +471,31 @@
         <tags>
             
             <tag> 日志 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>菜谱</title>
+      <link href="/posts/70a7eda9.html"/>
+      <url>/posts/70a7eda9.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="擂辣椒茄子皮蛋">擂辣椒茄子皮蛋</h3><p>主料：茄子(1个)，皮蛋（2个)，辣椒（看个人，一般两个）</p><p>辅料：蒜，芝麻油</p><p>酱料：老抽（2勺），陈醋（2勺），蚝油（1勺），少量盐</p><p>步骤：</p><ol><li>茄子洗净去皮切成小粗条，放锅上去蒸</li><li>皮蛋剥壳切块</li><li>茄子蒸软后放入碗中</li><li>大蒜切粒</li><li>辣椒洗干净放入锅中加油煎软，撕去表皮</li><li>放放酱料一起捣烂</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 菜谱 </tag>
             
         </tags>
       
