@@ -379,31 +379,6 @@
     
     
     <entry>
-      <title>如何处理亿级用户的登录状态查询</title>
-      <link href="/posts/41763455.html"/>
-      <url>/posts/41763455.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="假如系统需要统计一个上亿级别的的用户在线状态">假如系统需要统计一个上亿级别的的用户在线状态</h2><h3 id="方案一：">方案一：</h3><p>在数据库的基础上增加一个缓存，然后把登录状态存到redis里，在redis中去定义set类型的key，主要用来存储记录登录用户的ID。现在我们假设这个key叫login_user，如果用户登录，就往login_user中增加这个用户的id，如果用户登出就把这个key从set中删去，然后再用scard命令来统计set中的用户id的数量。</p><p>（但是这个方法对内存的消耗会有点大）</p><h3 id="方案二：">方案二：</h3><p>使用redis的bitmap来存储数据，bitmap本身就是为了亿级数据而诞生的，可以使用他的几个命令，如setbit、getbit和bigcount，用户登录可以用setbit命令去设置一个key为login_status的内容，然后将用户id作为一个位移值，将这个值设为1，即状态为1，那么当用户登出的时候，我们可以使用setbit命令将其状态改为0，如果是判断某个用户是否在线，可以使用getbit命令，如果是统计登录用户数量，可以使用bigcount来进行统计</p><p>（此方法优点是快，去重查重效率高，缺点是bitmap的位移值只能是数字，用户id也只能是自增的纯数字id，不适合分布式架构）</p><h2 id="如果是实现热力地图">如果是实现热力地图</h2><p>则可以使用redis的GEO，使用geoadd、geopos和geohash这些命令</p><p>当然，现在使用es的GEO更省事，如果加上ELK组合，则可以直接生成</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 情景问题 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>简单的python爬虫</title>
       <link href="/posts/2e8932a3.html"/>
       <url>/posts/2e8932a3.html</url>
@@ -429,23 +404,23 @@
     
     
     <entry>
-      <title>常用sql语句</title>
-      <link href="/posts/6605dc2.html"/>
-      <url>/posts/6605dc2.html</url>
+      <title>如何处理亿级用户的登录状态查询</title>
+      <link href="/posts/41763455.html"/>
+      <url>/posts/41763455.html</url>
       
-        <content type="html"><![CDATA[<h5 id="展示所有数据库">展示所有数据库</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases</span><br></pre></td></tr></table></figure><h5 id="创建一个student-grade表">创建一个student_grade表</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student_grade(</span><br><span class="line">id <span class="type">int</span>,</span><br><span class="line">name <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">enligsh <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>),</span><br><span class="line">math <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>),</span><br><span class="line">chinese <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p><em>此处enligsh为故意写错，方便下面修改示范</em></p><h5 id="插入两个数据">插入两个数据</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student_grade ( id, NAME, enligsh, math, chinese )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">(<span class="number">1</span>,<span class="string">&#x27;李狗蛋&#x27;</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">&#x27;聪明的李某人&#x27;</span>,<span class="number">99</span>,<span class="number">99</span>,<span class="number">99</span>);</span><br></pre></td></tr></table></figure><h5 id="查看表结构">查看表结构</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">desc</span> student_grade</span><br></pre></td></tr></table></figure><p>此时发现enligsh拼写错误</p><h5 id="修改字段名">修改字段名</h5><p>参考例句：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 CHANGE 旧字段名 新字段名 新数据类型;</span><br></pre></td></tr></table></figure><p>此处所用：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student_grade CHANGE enligsh  english <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>);</span><br></pre></td></tr></table></figure><p>这个方法也可以用来修改指定字段的数据类型，<em><strong>但是修改字段类型需要保证改后的数据类型能兼容之前的数据</strong></em>，例如此处我修改name的长度</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student_grade CHANGE name name <span class="type">VARCHAR</span>(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="假如系统需要统计一个上亿级别的的用户在线状态">假如系统需要统计一个上亿级别的的用户在线状态</h2><h3 id="方案一：">方案一：</h3><p>在数据库的基础上增加一个缓存，然后把登录状态存到redis里，在redis中去定义set类型的key，主要用来存储记录登录用户的ID。现在我们假设这个key叫login_user，如果用户登录，就往login_user中增加这个用户的id，如果用户登出就把这个key从set中删去，然后再用scard命令来统计set中的用户id的数量。</p><p>（但是这个方法对内存的消耗会有点大）</p><h3 id="方案二：">方案二：</h3><p>使用redis的bitmap来存储数据，bitmap本身就是为了亿级数据而诞生的，可以使用他的几个命令，如setbit、getbit和bigcount，用户登录可以用setbit命令去设置一个key为login_status的内容，然后将用户id作为一个位移值，将这个值设为1，即状态为1，那么当用户登出的时候，我们可以使用setbit命令将其状态改为0，如果是判断某个用户是否在线，可以使用getbit命令，如果是统计登录用户数量，可以使用bigcount来进行统计</p><p>（此方法优点是快，去重查重效率高，缺点是bitmap的位移值只能是数字，用户id也只能是自增的纯数字id，不适合分布式架构）</p><h2 id="如果是实现热力地图">如果是实现热力地图</h2><p>则可以使用redis的GEO，使用geoadd、geopos和geohash这些命令</p><p>当然，现在使用es的GEO更省事，如果加上ELK组合，则可以直接生成</p>]]></content>
       
       
       <categories>
           
-          <category> java笔记 </category>
+          <category> Java笔记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> sql技术 </tag>
+            <tag> 情景问题 </tag>
             
         </tags>
       
@@ -471,6 +446,31 @@
         <tags>
             
             <tag> 转载文章 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用sql语句</title>
+      <link href="/posts/6605dc2.html"/>
+      <url>/posts/6605dc2.html</url>
+      
+        <content type="html"><![CDATA[<h5 id="展示所有数据库">展示所有数据库</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases</span><br></pre></td></tr></table></figure><h5 id="创建一个student-grade表">创建一个student_grade表</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> student_grade(</span><br><span class="line">id <span class="type">int</span>,</span><br><span class="line">name <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">enligsh <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>),</span><br><span class="line">math <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>),</span><br><span class="line">chinese <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p><em>此处enligsh为故意写错，方便下面修改示范</em></p><h5 id="插入两个数据">插入两个数据</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> student_grade ( id, NAME, enligsh, math, chinese )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">(<span class="number">1</span>,<span class="string">&#x27;李狗蛋&#x27;</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">&#x27;聪明的李某人&#x27;</span>,<span class="number">99</span>,<span class="number">99</span>,<span class="number">99</span>);</span><br></pre></td></tr></table></figure><h5 id="查看表结构">查看表结构</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">desc</span> student_grade</span><br></pre></td></tr></table></figure><p>此时发现enligsh拼写错误</p><h5 id="修改字段名">修改字段名</h5><p>参考例句：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 表名 CHANGE 旧字段名 新字段名 新数据类型;</span><br></pre></td></tr></table></figure><p>此处所用：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student_grade CHANGE enligsh  english <span class="type">DECIMAL</span>(<span class="number">3</span>,<span class="number">1</span>);</span><br></pre></td></tr></table></figure><p>这个方法也可以用来修改指定字段的数据类型，<em><strong>但是修改字段类型需要保证改后的数据类型能兼容之前的数据</strong></em>，例如此处我修改name的长度</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student_grade CHANGE name name <span class="type">VARCHAR</span>(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> java笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sql技术 </tag>
             
         </tags>
       
