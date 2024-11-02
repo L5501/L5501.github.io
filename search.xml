@@ -529,17 +529,6 @@
     
     
     <entry>
-      <title>友链</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -551,11 +540,11 @@
     
     
     <entry>
-      <title>电影</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title></title>
+      <link href="/js/light.js"/>
+      <url>/js/light.js</url>
       
-        <content type="html"><![CDATA[<h2 id="天太冷了，冻死了，天气暖和再做这块"><a href="#天太冷了，冻死了，天气暖和再做这块" class="headerlink" title="天太冷了，冻死了，天气暖和再做这块"></a>天太冷了，冻死了，天气暖和再做这块</h2>]]></content>
+        <content type="html"><![CDATA[// 霓虹灯效果// 颜色数组var arr = ["#39c5bb", "#f14747", "#f1a247", "#f1ee47", "#b347f1", "#1edbff", "#ed709b", "#5636ed"];// 颜色索引var idx = 0;// 切换颜色function changeColor() {    // 仅夜间模式才启用    if (document.getElementsByTagName('html')[0].getAttribute('data-theme') == 'dark') {        if (document.getElementById("site-name"))            document.getElementById("site-name").style.textShadow = arr[idx] + " 0 0 15px";        if (document.getElementById("site-title"))            document.getElementById("site-title").style.textShadow = arr[idx] + " 0 0 15px";        if (document.getElementById("site-subtitle"))            document.getElementById("site-subtitle").style.textShadow = arr[idx] + " 0 0 10px";        if (document.getElementById("post-info"))            document.getElementById("post-info").style.textShadow = arr[idx] + " 0 0 5px";        try {            document.getElementsByClassName("author-info__name")[0].style.textShadow = arr[idx] + " 0 0 12px";            document.getElementsByClassName("author-info__description")[0].style.textShadow = arr[idx] + " 0 0 12px";        } catch {                    }        idx++;        if (idx == 8) {            idx = 0;        }    } else {        // 白天模式恢复默认        if (document.getElementById("site-name"))            document.getElementById("site-name").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("site-title"))            document.getElementById("site-title").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("site-subtitle"))            document.getElementById("site-subtitle").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("post-info"))            document.getElementById("post-info").style.textShadow = "#1e1e1ee0 1px 1px 1px";        try {            document.getElementsByClassName("author-info__name")[0].style.textShadow = "";            document.getElementsByClassName("author-info__description")[0].style.textShadow = "";        } catch {                    }    }}// 开启计时器window.onload = setInterval(changeColor, 1200);]]></content>
       
     </entry>
     
@@ -596,17 +585,6 @@
     
     <entry>
       <title></title>
-      <link href="/js/light.js"/>
-      <url>/js/light.js</url>
-      
-        <content type="html"><![CDATA[// 霓虹灯效果// 颜色数组var arr = ["#39c5bb", "#f14747", "#f1a247", "#f1ee47", "#b347f1", "#1edbff", "#ed709b", "#5636ed"];// 颜色索引var idx = 0;// 切换颜色function changeColor() {    // 仅夜间模式才启用    if (document.getElementsByTagName('html')[0].getAttribute('data-theme') == 'dark') {        if (document.getElementById("site-name"))            document.getElementById("site-name").style.textShadow = arr[idx] + " 0 0 15px";        if (document.getElementById("site-title"))            document.getElementById("site-title").style.textShadow = arr[idx] + " 0 0 15px";        if (document.getElementById("site-subtitle"))            document.getElementById("site-subtitle").style.textShadow = arr[idx] + " 0 0 10px";        if (document.getElementById("post-info"))            document.getElementById("post-info").style.textShadow = arr[idx] + " 0 0 5px";        try {            document.getElementsByClassName("author-info__name")[0].style.textShadow = arr[idx] + " 0 0 12px";            document.getElementsByClassName("author-info__description")[0].style.textShadow = arr[idx] + " 0 0 12px";        } catch {                    }        idx++;        if (idx == 8) {            idx = 0;        }    } else {        // 白天模式恢复默认        if (document.getElementById("site-name"))            document.getElementById("site-name").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("site-title"))            document.getElementById("site-title").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("site-subtitle"))            document.getElementById("site-subtitle").style.textShadow = "#1e1e1ee0 1px 1px 1px";        if (document.getElementById("post-info"))            document.getElementById("post-info").style.textShadow = "#1e1e1ee0 1px 1px 1px";        try {            document.getElementsByClassName("author-info__name")[0].style.textShadow = "";            document.getElementsByClassName("author-info__description")[0].style.textShadow = "";        } catch {                    }    }}// 开启计时器window.onload = setInterval(changeColor, 1200);]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
       <link href="/js/lunar.js"/>
       <url>/js/lunar.js</url>
       
@@ -622,6 +600,17 @@
       <url>/js/runtime.js</url>
       
         <content type="html"><![CDATA[var now = new Date;function createtime() {    now.setTime(now.getTime() + 1e3);    var e = new Date("11/19/2022 00:00:00"),        t = Math.trunc(234e8 + (now - e) / 1e3 * 17),        a = (t / 1496e5).toFixed(6),        r = new Date("11/26/2022 00:00:00"),        o = (now - r) / 1e3 / 60 / 60 / 24,        i = Math.floor(o),        n = (now - r) / 1e3 / 60 / 60 - 24 * i,        s = Math.floor(n);    1 == String(s).length && (s = "0" + s);    var l = (now - r) / 1e3 / 60 - 1440 * i - 60 * s,        g = Math.floor(l);    1 == String(g).length && (g = "0" + g);    var d = (now - r) / 1e3 - 86400 * i - 3600 * s - 60 * g,        c = Math.round(d);    1 == String(c).length && (c = "0" + c);    let h = "";    h = s < 18 && s >= 9 ? `<img class='boardsign' src='https://img.shields.io/badge/F小屋-上班摸鱼中-6adea8?style=social&logo=cakephp' title='距离月入25k也就还差一个大佬带我~'><br> 本站居然运行了 ${i} 天 ${s} 小时 ${g} 分 ${c} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀 <br> 再看看那个光点，它就在这里，这是家园，这是我们 —— 你所爱的每一个人，你认识的一个人，你听说过的每一个人，曾经有过的每一个人，都在它上面度过他们的一生✨ ` : `<img class='boardsign' src='https://img.shields.io/badge/F小屋-打烊休息啦-6adea8?style=social&logo=coffeescript' title='今天一定早睡~'><br> 本站居然运行了 ${i} 天 ${s} 小时 ${g} 分 ${c} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀 <br> 我不怕死亡，唯独惧怕失去思考✨ `, document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = h)}setInterval((() => {    createtime()}), 1e3);]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>友链</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -650,11 +639,11 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
-        <content type="html"><![CDATA[<!-- ## 暂时下线    <div id="aplayer-ybJQuSMi" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7422861869" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="400px" data-preload="none" data-theme="#ad7a86"    ></div> --><!-- ## QQ音乐歌单 --><div id="aplayer-oSEOhviA" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="8708383891" data-server="tencent" data-type="playlist" data-mode="random" data-autoplay="true" data-listmaxheight="340px" data-preload="auto" data-theme="#e3f2f5" data-volume="0.4" mutex="true"></div>]]></content>
+        <content type="html"><![CDATA[<h2 id="天太冷了，冻死了，天气暖和再做这块"><a href="#天太冷了，冻死了，天气暖和再做这块" class="headerlink" title="天太冷了，冻死了，天气暖和再做这块"></a>天太冷了，冻死了，天气暖和再做这块</h2>]]></content>
       
     </entry>
     
@@ -666,6 +655,17 @@
       <url>/password-protected/index.html</url>
       
         <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="61c6b8bcc905cde0f0510f39e478e97a4eb0bf4f61ac7d61f7aa38442222a0d7">d7f91e15485133d7ea3ffaf04b70b21ac84c1d9a4b23ef1047f7014a7f53daf920e4cd2d5e5bca2649aa3e32d7b5c181ec60912d6390eedc7f3d404ef0eda1b7dd0f707ea52ed61d429081476fcb2337380e68a4ea832416ebedbd0251187185192890cbdb6ca36b3084b0bd64262b8dcde9126a0e4e8e8cfe3ce7e8602b12602adeed7ada5a04d1e6272e13b359b92c6dd53e5d893f5028b1120f54465ea42ea52c308c399769975620acaa0762a75fc794354f743f2109c3f1d37d2b2587d2c42c67a1628519d8da03ff0ea6d97bc4ab08abb4d79b0f7f2ab20b7cdf101094b865978143c373d492e3b3122acfc578c0f0f43bc5cc7fc74dcfd0950529d7422b471240dad6701e2159c7279b0bf9a604785b6dbeb74886ac8682677ccd6a809c091e5e4d661da2344fcaad89bfe0b1ae4e4b2f3bfbe6f698fb11662d2362feb9d7cc82c0e7b92655d245bed53d7e5196893156808621d63c5fbb0bb628edfe230c2c04d317d1db40eb42209b66b1a72204246a200e646445e012aba6502da3f9d0ba34e0e0d71cee615b5969bd069e4955a1feefea881fc55979622df6ffa1c25675189ab207922e9a4ecfb6eafa05f85fb7a0c0ff87af92f33fe7cd72ebe04bab039edb011a8217d4dff7215730309624f3f50f04a9b52236d101987f1f1ddc21c4c2156fcea10345f23133a3793b571ec0ef41b4b5b7d8c0280b9ffbbd53fcc2b4c30d672903a04aa19675a7891309b55adeb611b40204d4275396f621eb7e2e3290d730a532fe1339e14efdefe5c39361f2f25aa50b857d2a4422c2f6180fc61c5de05bab99b9f0c91fc27ebb76ee7f7d7d8dde21da7aa1027a574f2525b791a3ccf780ddea28006471653352d84b9564706e0e8d90e9c0d778a0cfcdc2fd7f304b12d3759f1046051fe4ffc8f4362925ad0c7bff06c66e20f9781379b883f7b08ec8b0edf3e8ae2a06b3334e36d1c8abf32512fbb5adbe2597b57120b44b91a79bef5a08609694d1d5f9d13d5dfc39f1d64ecc7039476de7f4f8d27ba6dd1fb571cd5405017ec7bc677e41b9dc8400a9b982efb280c407052a921edb3a</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[<!-- ## 暂时下线    <div id="aplayer-XOjjOUAR" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="7422861869" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="true" data-mutex="false" data-listmaxheight="400px" data-preload="none" data-theme="#ad7a86"    ></div> --><!-- ## QQ音乐歌单 --><div id="aplayer-oSEOhviA" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="8708383891" data-server="tencent" data-type="playlist" data-mode="random" data-autoplay="true" data-listmaxheight="340px" data-preload="auto" data-theme="#e3f2f5" data-volume="0.4" mutex="true"></div>]]></content>
       
     </entry>
     
